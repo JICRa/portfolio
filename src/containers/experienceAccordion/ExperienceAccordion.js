@@ -1,51 +1,81 @@
 import React, { Component } from "react";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard.js";
 import "./ExperienceAccordion.css";
-import { Accordion, Panel } from "baseui/accordion";
 
 class ExperienceAccordion extends Component {
   render() {
-    const theme = this.props.theme;
+    const { theme, sections } = this.props;
+
+    // Merge Work + Internships into one timeline
+    const workAndInternships = [];
+    let volunteering = [];
+
+    sections.forEach((section) => {
+      if (section.title === "Volunteerships") {
+        volunteering = section.experiences;
+      } else {
+        workAndInternships.push(...section.experiences);
+      }
+    });
+
     return (
       <div className="experience-accord">
-        <Accordion>
-          {this.props.sections.map((section) => {
+        {/* Main vertical timeline */}
+        <div
+          className="timeline"
+          style={{
+            "--timeline-line-color": theme.headerColor,
+            "--timeline-label-bg": theme.body,
+            "--timeline-label-text": theme.text,
+          }}
+        >
+          <div className="timeline-present-label">Present</div>
+
+          {workAndInternships.map((experience, index) => {
+            const country = (experience.country || "").toLowerCase();
+            const side =
+              country === "switzerland"
+                ? "left"
+                : country === "chile"
+                ? "right"
+                : index % 2 === 0
+                ? "left"
+                : "right";
+
             return (
-              <Panel
-                className="accord-panel"
-                title={section["title"]}
-                key={section["title"]}
-                overrides={{
-                  Header: {
-                    style: () => ({
-                      backgroundColor: `${theme.body}`,
-                      border: `1px solid`,
-                      borderRadius: `5px`,
-                      borderColor: `${theme.headerColor}`,
-                      marginBottom: `3px`,
-                      fontFamily: "Google Sans Regular",
-                      color: `${theme.text}`,
-                      ":hover": {
-                        color: `${theme.secondaryText}`,
-                      },
-                    }),
-                  },
-                  Content: {
-                    style: () => ({
-                      backgroundColor: `${theme.body}`,
-                    }),
-                  },
-                }}
-              >
-{section["experiences"].map((experience,index) => {
-                  return (
-                    <ExperienceCard index={index} totalCards={section["experiences"].length} experience={experience} theme={theme} />
-                  );
-                })}
-              </Panel>
+              <ExperienceCard
+                key={experience.title + index}
+                experience={experience}
+                index={index}
+                theme={theme}
+                side={side}
+              />
             );
           })}
-        </Accordion>
+        </div>
+
+        {/* Volunteering section below timeline */}
+        {volunteering.length > 0 && (
+          <div className="experience-volunteering">
+            <h2
+              className="experience-volunteering-title"
+              style={{ color: theme.text }}
+            >
+              Volunteering
+            </h2>
+            <div className="experience-volunteering-list">
+              {volunteering.map((experience, index) => (
+                <ExperienceCard
+                  key={experience.title + index}
+                  experience={experience}
+                  index={index}
+                  theme={theme}
+                  side="right"
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     );
   }

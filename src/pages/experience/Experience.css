@@ -86,3 +86,45 @@
     text-align: center;
   }
 }
+/* Wrapper around the timeline (just for clarity / future tweaks) */
+.experience-timeline-wrapper {
+  position: relative;
+}
+
+/* Vertical country labels – fixed, but only visible over timeline */
+.experience-country-label {
+  position: fixed;
+  top: 50%;
+  z-index: 20;
+  font-family: "Google Sans Medium";
+  font-size: 35px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.25s ease-out;
+}
+
+/* When timeline is active, fade in */
+.experience-country-label.visible {
+  opacity: 0.35;
+}
+
+/* Left side label (bottom-to-top) */
+.left-label {
+  left: 32px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Right side label (bottom-to-top mirrored) */
+.right-label {
+  right: 32px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Hide on small screens */
+@media (max-width: 768px) {
+  .experience-country-label {
+    display: none;
+  }
+}

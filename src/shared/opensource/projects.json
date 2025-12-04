@@ -1,124 +1,178 @@
 {
   "data": [
     {
-      "id": "R_kgDOJWL0-g",
-      "name": "mdp-diffusion",
-      "createdAt": "2023-04-13T04:18:19Z",
-      "url": "https://github.com/ashutosh1919/mdp-diffusion",
-      "description": "Text-guided image editing by manipulating diffusion path without any training.",
-      "isFork": false,
-      "languages": [
-        {
+      "node": {
+        "id": "porMe",
+        "name": "PorMe",
+        "nameWithOwner": "JICRa/PorMe",
+        "description": "Image-based pore and porosity analysis for orthogonal 3D-printed scaffolds. Automates feature extraction for quality control.",
+        "url": "https://github.com/JICRa/PorMe",
+        "createdAt": "2024-03-15T00:00:00Z",
+        "primaryLanguage": {
           "name": "Python",
-          "iconifyClass": "logos-python"
+          "color": "#3572A5"
         },
-        {
-          "name": "Shell",
-          "iconifyClass": "simple-icons:shell"
+        "languages": {
+          "edges": [
+            {
+              "node": {
+                "name": "Python",
+                "color": "#3572A5"
+              }
+            }
+          ]
         },
-        {
-          "name": "Jupyter Notebook",
-          "iconifyClass": "logos-jupyter"
-        }
-      ]
+        "stargazers": {
+          "totalCount": 0
+        },
+        "forkCount": 0,
+        "diskUsage": 0
+      }
     },
     {
-      "id": "R_kgDOG_vYHA",
-      "name": "explainable-cnn",
-      "createdAt": "2022-03-13T20:41:33Z",
-      "url": "https://github.com/ashutosh1919/explainable-cnn",
-      "description": "📦 PyTorch based visualization package for generating layer-wise explanations for CNNs.",
-      "isFork": false,
-      "languages": [
-        {
+      "node": {
+        "id": "pcl-bg-analysis",
+        "name": "PCL-BG-Composites-Analysis",
+        "nameWithOwner": "JICRa/PCL-BG-Composites-Analysis",
+        "description": "Analysis workflows for PCL–bioactive glass composites: rheology, print fidelity, mechanical properties and cell response.",
+        "url": "https://github.com/JICRa/PCL-BG-Composites-Analysis",
+        "createdAt": "2022-06-15T00:00:00Z",
+        "primaryLanguage": {
           "name": "Python",
-          "iconifyClass": "logos-python"
-        }
-      ]
+          "color": "#3572A5"
+        },
+        "languages": {
+          "edges": [
+            {
+              "node": {
+                "name": "Python",
+                "color": "#3572A5"
+              }
+            }
+          ]
+        },
+        "stargazers": {
+          "totalCount": 0
+        },
+        "forkCount": 0,
+        "diskUsage": 0
+      }
     },
     {
-      "id": "MDEwOlJlcG9zaXRvcnkyNDU0NjcyNzQ=",
-      "name": "masterPortfolio",
-      "createdAt": "2020-03-06T16:26:54Z",
-      "url": "https://github.com/ashutosh1919/masterPortfolio",
-      "description": "🔥 The Complete Customizable Software Developer Portfolio Template which lets you showcase your work and provides each and every detail about you as Software Developer.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "HTML",
-          "iconifyClass": "logos-html-5"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        },
-        {
-          "name": "JavaScript",
-          "iconifyClass": "logos-javascript"
-        },
-        {
-          "name": "Dockerfile",
-          "iconifyClass": "simple-icons:docker"
-        }
-      ]
-    },
-    {
-      "id": "R_kgDOG0_8uQ",
-      "name": "react-awesome-shapes",
-      "createdAt": "2022-02-11T14:50:20Z",
-      "url": "https://github.com/ashutosh1919/react-awesome-shapes",
-      "description": "🌀 Insert Awesome Shapes into Your React Site with Ease.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "HTML",
-          "iconifyClass": "logos-html-5"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        },
-        {
-          "name": "Shell",
-          "iconifyClass": "simple-icons:shell"
-        },
-        {
-          "name": "JavaScript",
-          "iconifyClass": "logos-javascript"
-        }
-      ]
-    },
-    {
-      "id": "R_kgDOGcPKSQ",
-      "name": "neuro-symbolic-sudoku-solver",
-      "createdAt": "2021-11-26T17:56:07Z",
-      "url": "https://github.com/ashutosh1919/neuro-symbolic-sudoku-solver",
-      "description": "⚙️ Solving sudoku using Deep Reinforcement learning in combination with powerful symbolic representations.",
-      "isFork": false,
-      "languages": [
-        {
+      "node": {
+        "id": "bioreactor-tools",
+        "name": "Bioreactor-Data-Tools",
+        "nameWithOwner": "JICRa/Bioreactor-Data-Tools",
+        "description": "Processing and visualization tools for dynamic bioreactor experiments: sensor data cleaning, synchronization and reporting.",
+        "url": "https://github.com/JICRa/Bioreactor-Data-Tools",
+        "createdAt": "2025-04-06T00:00:00Z",
+        "primaryLanguage": {
           "name": "Python",
-          "iconifyClass": "logos-python"
-        }
-      ]
+          "color": "#3572A5"
+        },
+        "languages": {
+          "edges": [
+            {
+              "node": {
+                "name": "Python",
+                "color": "#3572A5"
+              }
+            }
+          ]
+        },
+        "stargazers": {
+          "totalCount": 0
+        },
+        "forkCount": 0,
+        "diskUsage": 0
+      }
     },
     {
-      "id": "MDEwOlJlcG9zaXRvcnkzMjU5NDM1MTE=",
-      "name": "react-liquidswipe",
-      "createdAt": "2021-01-01T08:31:51Z",
-      "url": "https://github.com/ashutosh1919/react-liquidswipe",
-      "description": "🚀 Smooth Liquid Swipe Animation to transition between different components.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "JavaScript",
-          "iconifyClass": "logos-javascript"
+      "node": {
+        "id": "microCT-workflows",
+        "name": "MicroCT-Workflow",
+        "nameWithOwner": "JICRa/MicroCT-Workflow",
+        "description": "Scripts and notebooks for microCT-based porosity, morphology and structure–function analysis of 3D-printed scaffolds.",
+        "url": "https://github.com/JICRa/MicroCT-Workflow",
+        "createdAt": "2019-11-22T00:00:00Z",
+        "primaryLanguage": {
+          "name": "Python",
+          "color": "#3572A5"
         },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        }
-      ]
+        "languages": {
+          "edges": [
+            {
+              "node": {
+                "name": "Python",
+                "color": "#3572A5"
+              }
+            }
+          ]
+        },
+        "stargazers": {
+          "totalCount": 0
+        },
+        "forkCount": 0,
+        "diskUsage": 0
+      }
+    },
+    {
+      "node": {
+        "id": "bone-imaging-ml",
+        "name": "Bone-Imaging-ML",
+        "nameWithOwner": "JICRa/Bone-Imaging-ML",
+        "description": "ML and computer vision pipelines for cell and tissue image segmentation, morphology analysis and quantitative readouts.",
+        "url": "https://github.com/JICRa/Bone-Imaging-ML",
+        "createdAt": "2022-08-13T00:00:00Z",
+        "primaryLanguage": {
+          "name": "Python",
+          "color": "#3572A5"
+        },
+        "languages": {
+          "edges": [
+            {
+              "node": {
+                "name": "Python",
+                "color": "#3572A5"
+              }
+            }
+          ]
+        },
+        "stargazers": {
+          "totalCount": 0
+        },
+        "forkCount": 0,
+        "diskUsage": 0
+      }
+    },
+    {
+      "node": {
+        "id": "portfolio-site",
+        "name": "JICRa.github.io",
+        "nameWithOwner": "JICRa/JICRa.github.io",
+        "description": "Source code of my personal portfolio: React-based site showcasing data science, bioengineering and ML/AI projects.",
+        "url": "https://github.com/JICRa/JICRa.github.io",
+        "createdAt": "2025-12-03T00:00:00Z",
+        "primaryLanguage": {
+          "name": "JavaScript",
+          "color": "#f1e05a"
+        },
+        "languages": {
+          "edges": [
+            {
+              "node": {
+                "name": "JavaScript",
+                "color": "#f1e05a"
+              }
+            }
+          ]
+        },
+        "stargazers": {
+          "totalCount": 0
+        },
+        "forkCount": 0,
+        "diskUsage": 0
+      }
     }
   ]
 }

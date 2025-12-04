@@ -1,3 +1,32 @@
+/* Reverse for odd sections */
+.reverse-skill {
+  flex-direction: row-reverse;
+}
+
+/* Optional: fix spacing when reversed */
+.reverse-skill .skills-text-div {
+  margin-right: 40px; /* adjust if needed */
+  margin-left: 0;
+}
+
+.reverse-skill .skills-image-div {
+  margin-left: 40px; /* adjust */
+  margin-right: 0;
+}
+
+/* Ensure mobile stays stacked */
+@media (max-width: 768px) {
+  .skills-main-div,
+  .reverse-skill {
+    flex-direction: column !important;
+  }
+
+  .skills-image-div,
+  .skills-text-div {
+    margin: 0 !important;
+  }
+}
+
 .skills-main-div {
   display: flex;
   overflow: hidden;

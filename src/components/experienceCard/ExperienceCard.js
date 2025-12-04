@@ -4,113 +4,121 @@ import { Fade } from "react-reveal";
 
 class ExperienceCard extends Component {
   render() {
-    const experience = this.props.experience;
-    const index = this.props.index;
-    const totalCards = this.props.totalCards;
-    const theme = this.props.theme;
-    return (
-      <div
-        className="experience-list-item"
-        style={{ marginTop: index === 0 ? 30 : 50 }}
-      >
-        <Fade left duration={2000} distance="40px">
-          <div className="experience-card-logo-div">
-            <img
-              className="experience-card-logo"
-              src={require(`../../assets/images/${experience["logo_path"]}`)}
-              alt=""
-            />
-          </div>
-        </Fade>
-        <div className="experience-card-stepper">
-          <div
-            style={{
-              width: 20,
-              height: 20,
-              backgroundColor: `${theme.headerColor}`,
-              borderRadius: 50,
-              zIndex: 100,
-            }}
-          />
-          {index !== totalCards - 1 && (
-            <div
-              style={{
-                height: 190,
-                width: 2,
-                backgroundColor: `${theme.headerColor}`,
-                position: "absolute",
-                marginTop: 20,
-              }}
-            />
-          )}
-        </div>
-        <Fade right duration={2000} distance="40px">
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <div
-              className="arrow-left"
-              style={{ borderRight: `10px solid ${theme.body}` }}
-            ></div>
-            <div
-              className="experience-card"
-              style={{ background: `${theme.body}` }}
+    const { experience, theme, side = "left", timelineLabel } = this.props;
+
+    const textCard = (
+      <Fade bottom duration={1200} distance="30px">
+        <div
+          className="experience-card"
+          style={{ background: theme.white || theme.white }}
+        >
+          <h3 className="experience-card-title" style={{ color: theme.text }}>
+            {experience["title"]}
+          </h3>
+
+          <p
+            className="experience-card-department"
+            style={{ color: theme.secondaryText }}
+          >
+            {experience["department"]}
+          </p>
+
+          {/*
+          <p className="experience-card-company">
+            <a
+              href={experience["company_url"]}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <div>
-                  <h3
-                    className="experience-card-title"
-                    style={{ color: theme.text }}
-                  >
-                    {experience["title"]}
-                  </h3>
-                  <p
-                    className="experience-card-company"
-                    style={{ color: theme.text }}
-                  >
-                    <a
-                      href={experience["company_url"]}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {experience["company"]}
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <div className="experience-card-heading-right">
-                    <p
-                      className="experience-card-duration"
-                      style={{ color: theme.secondaryText }}
-                    >
-                      {experience["duration"]}
-                    </p>
-                    <p
-                      className="experience-card-location"
-                      style={{ color: theme.secondaryText }}
-                    >
-                      {experience["location"]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  marginTop: 20,
-                }}
-              >
-                <div className="repo-description" />
-                {experience["description"]}
-              </div>
-            </div>
+              {experience["company"]}
+            </a>
+          </p>
+          
+          <p
+            className="experience-card-location"
+            style={{ color: theme.secondaryText }}
+          >
+            {experience["location"]}
+          </p>
+
+          <p
+            className="experience-card-duration"
+            style={{ color: theme.secondaryText }}
+          >
+            {experience["duration"]}
+          </p>
+          */}
+          <div
+            className="experience-card-description"
+            style={{ color: theme.text }}
+          >
+            {Array.isArray(experience.description) ? (
+              <ul>
+                {experience.description.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              experience.description
+            )}
           </div>
-        </Fade>
+        </div>
+      </Fade>
+    );
+
+    const logoCard = (
+      <div className="timeline-logo-card">
+        {/* colored header strip with duration */}
+        <div
+          className="timeline-logo-header"
+          style={{
+            backgroundColor: theme.headerColor,
+            color: theme.body,
+          }}
+        >
+          <span className="timeline-logo-duration">
+            {experience["duration"]}
+          </span>
+        </div>
+
+        <div className="timeline-logo-body">
+          <img
+            className="timeline-logo-image"
+            src={require(`../../assets/images/${experience["logo_path"]}`)}
+            alt={experience["company"]}
+          />
+          <div className="timeline-logo-text">
+            <p className="timeline-logo-company">{experience["company"]}</p>
+            <p className="timeline-logo-location">{experience["location"]}</p>
+          </div>
+        </div>
+      </div>
+    );
+
+    return (
+      <div className={`timeline-item ${side}`}>
+        <div className="timeline-columns">
+          {/* LEFT COLUMN */}
+          <div className="timeline-col">
+            {side === "left" ? textCard : logoCard}
+          </div>
+
+          {/* CENTER (TIMELINE + DOT + OPTIONAL YEAR LABEL) */}
+          <div className="timeline-center">
+            <span
+              className="timeline-dot"
+              style={{ backgroundColor: theme.headerColor }}
+            />
+            {timelineLabel && (
+              <div className="timeline-year-label">{timelineLabel}</div>
+            )}
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="timeline-col">
+            {side === "left" ? logoCard : textCard}
+          </div>
+        </div>
       </div>
     );
   }

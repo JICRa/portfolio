@@ -7,7 +7,7 @@ import Button from "../../components/button/Button";
 import { openSource } from "../../portfolio";
 import { greeting } from "../../portfolio.js";
 
-export default function Projects() {
+export default function Projects({ theme }) {
   const [repo, setrepo] = useState([]);
 
   useEffect(() => {
@@ -35,18 +35,18 @@ export default function Projects() {
                 pinnedRepositories(first: 6) {
                   edges {
                     node {
-                      nameWithOwner
+                      name
                       description
-                      forkCount
-                      stargazers {
-                        totalCount
-                      }
                       url
                       id
-                      diskUsage
-                      primaryLanguage {
-                        name
-                        color
+                      createdAt
+                      languages(first: 10) {
+                        edges {
+                          node {
+                            name
+                            color
+                          }
+                        }
                       }
                     }
                   }
@@ -71,7 +71,7 @@ export default function Projects() {
       <h1 className="project-title">Open Source Projects</h1>
       <div className="repo-cards-div-main">
         {repo.map((v, i) => {
-          return <GithubRepoCard repo={v} key={v.node.id} />;
+          return <GithubRepoCard repo={v.node} theme={theme} key={v.node.id} />;
         })}
       </div>
       <Button

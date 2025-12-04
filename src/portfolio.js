@@ -1,532 +1,333 @@
-/* Change this file to get your personal Porfolio */
+/* Change this file to get your personal Portfolio */
 
 // Website related settings
 const settings = {
-  isSplash: true, // Change this to false if you don't want Splash screen.
+  isSplash: true, // keep splash screen
 };
 
-//SEO Related settings
+// SEO Related settings
 const seo = {
-  title: "Ashutosh's Portfolio",
+  title: "José I. Contreras Raggio",
   description:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "Data-driven bioengineer and ML/AI specialist using imaging, modeling and automation to solve real-world problems in healthcare and advanced manufacturing.",
   og: {
-    title: "Ashutosh Hathidara Portfolio",
+    title: "Portfolio | José Ignacio Contreras Raggio",
     type: "website",
-    url: "http://ashutoshhathidara.com/",
+    url: "https://jicra.github.io/",
   },
 };
 
-//Home Page
+// Home Page
 const greeting = {
-  title: "Ashutosh Hathidara",
-  logo_name: "AshutoshHathidara",
-  nickname: "layman_brother",
+  title: "José Ignacio Contreras Raggio",
+  logo_name: "Jose I. Contreras Raggio",
+  nickname: "I Use Data to Solve Real-World Problems",
   subTitle:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
-  resumeLink:
-    "https://drive.google.com/file/d/1bXRknv_h-XI_3CQ3SGPteGODtvEb7YvI/view?usp=sharing",
-  portfolio_repository: "https://github.com/ashutosh1919/masterPortfolio",
-  githubProfile: "https://github.com/ashutosh1919",
+    "Data-driven bioengineer and PhD candidate. I work across the biomedical and engineering sectors, using ML/AI, image analysis and modeling to solve problems, improve processes and extract actionable insights from complex data.",
+  resumeLink: "https://jicra.github.io/cv.pdf",
+  portfolio_repository: "https://github.com/JICRa/JICRa.github.io",
+  githubProfile: "https://github.com/JICRa",
 };
 
+// Social Media Links
 const socialMediaLinks = [
-  /* Your Social Media Link */
-  // github: "https://github.com/ashutosh1919",
-  // linkedin: "https://www.linkedin.com/in/ashutosh-hathidara-88710b138/",
-  // gmail: "ashutoshhathidara98@gmail.com",
-  // gitlab: "https://gitlab.com/ashutoshhathidara98",
-  // facebook: "https://www.facebook.com/laymanbrother.19/",
-  // twitter: "https://twitter.com/ashutosh_1919",
-  // instagram: "https://www.instagram.com/layman_brother/"
-
-  {
-    name: "Github",
-    link: "https://github.com/ashutosh1919",
-    fontAwesomeIcon: "fa-github", // Reference https://fontawesome.com/icons/github?style=brands
-    backgroundColor: "#181717", // Reference https://simpleicons.org/?q=github
-  },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/ashutosh1919/",
-    fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
-    backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
+    link: "https://www.linkedin.com/in/jicr/",
+    fontAwesomeIcon: "fa-brands:linkedin-in",
+    backgroundColor: "#0077B5",
   },
   {
-    name: "YouTube",
-    link: "https://youtube.com/c/DevSense19",
-    fontAwesomeIcon: "fa-youtube", // Reference https://fontawesome.com/icons/youtube?style=brands
-    backgroundColor: "#FF0000", // Reference https://simpleicons.org/?q=youtube
+    name: "Email",
+    link: "mailto:joseiraggio@gmail.com",
+    fontAwesomeIcon: "fa-solid:envelope",
+    backgroundColor: "#D14836",
   },
   {
-    name: "Gmail",
-    link: "mailto:ashutoshhathidara98@gmail.com",
-    fontAwesomeIcon: "fa-google", // Reference https://fontawesome.com/icons/google?style=brands
-    backgroundColor: "#D14836", // Reference https://simpleicons.org/?q=gmail
+    name: "ORCID",
+    link: "https://orcid.org/0000-0002-7457-9559",
+    fontAwesomeIcon: "simple-icons:orcid",
+    backgroundColor: "#A6CE39",
   },
   {
-    name: "X-Twitter",
-    link: "https://twitter.com/ashutosh_1919",
-    fontAwesomeIcon: "fa-x-twitter", // Reference https://fontawesome.com/icons/x-twitter?f=brands&s=solid
-    backgroundColor: "#000000", // Reference https://simpleicons.org/?q=x
+    name: "ResearchGate",
+    link: "https://www.researchgate.net/profile/Jose_Contreras_Raggio",
+    fontAwesomeIcon: "simple-icons:researchgate",
+    backgroundColor: "#00CCBB",
   },
   {
-    name: "Facebook",
-    link: "https://www.facebook.com/laymanbrother.19/",
-    fontAwesomeIcon: "fa-facebook-f", // Reference https://fontawesome.com/icons/facebook-f?style=brands
-    backgroundColor: "#1877F2", // Reference https://simpleicons.org/?q=facebook
+    name: "Google Scholar",
+    link: "https://scholar.google.com/citations?user=6uE9zYUAAAAJ&hl=en",
+    fontAwesomeIcon: "simple-icons:googlescholar",
+    backgroundColor: "#4285F4",
   },
   {
-    name: "Instagram",
-    link: "https://www.instagram.com/layman_brother/",
-    fontAwesomeIcon: "fa-instagram", // Reference https://fontawesome.com/icons/instagram?style=brands
-    backgroundColor: "#E4405F", // Reference https://simpleicons.org/?q=instagram
+    name: "Github",
+    link: "https://github.com/JICRa",
+    fontAwesomeIcon: "fa-brands:github",
+    backgroundColor: "#181717",
   },
 ];
-
 const skills = {
   data: [
     {
-      title: "Data Science & AI",
+      title: "Data Science & Applied Machine Learning",
       fileName: "DataScienceImg",
       skills: [
-        "⚡ Developing highly scalable production ready models for various deeplearning and statistical use cases",
-        "⚡ Experience of working with Computer Vision and NLP projects",
-        "⚡ Complex quantitative modelling for dynamic forecasting and time series analysis",
+        "⚡ Turning biomedical and engineering datasets into clear, actionable insights that support real decision-making.",
+        "⚡ Building reliable ML/AI pipelines with strong feature engineering, validation and interpretability.",
+        "⚡ Developing end-to-end workflows for data cleaning, modeling, visualization and automated quality control.",
+        "⚡ Experienced with complex scientific data (microCT, microscopy, point clouds, retrieval data).",
       ],
       softwareSkills: [
-        {
-          skillName: "Tensorflow",
-          fontAwesomeClassname: "logos-tensorflow",
-          style: {
-            backgroundColor: "transparent",
-          },
-        },
-        {
-          skillName: "Keras",
-          fontAwesomeClassname: "simple-icons:keras",
-          style: {
-            backgroundColor: "white",
-            color: "#D00000",
-          },
-        },
-        {
-          skillName: "PyTorch",
-          fontAwesomeClassname: "logos-pytorch",
-          style: {
-            backgroundColor: "transparent",
-          },
-        },
         {
           skillName: "Python",
           fontAwesomeClassname: "ion-logo-python",
-          style: {
-            backgroundColor: "transparent",
-            color: "#3776AB",
-          },
+          style: { color: "#3776AB" },
         },
         {
-          skillName: "Deeplearning",
-          imageSrc: "deeplearning_ai_logo.png",
+          skillName: "NumPy",
+          fontAwesomeClassname: "simple-icons:numpy",
+          style: { color: "#013243" },
+        },
+        {
+          skillName: "Pandas",
+          fontAwesomeClassname: "simple-icons:pandas",
+          style: { color: "#150458" },
+        },
+        {
+          skillName: "scikit-learn",
+          fontAwesomeClassname: "simple-icons:scikitlearn",
+          style: { color: "#F7931E" },
+        },
+        {
+          skillName: "PyTorch",
+          fontAwesomeClassname: "simple-icons:pytorch",
+          style: { color: "#EE4C2C" },
+        },
+        {
+          skillName: "R",
+          fontAwesomeClassname: "simple-icons:r",
+          style: { color: "#276DC3" },
         },
       ],
     },
+
     {
-      title: "Full Stack Development",
+      title: "Software Development & Automation",
       fileName: "FullStackImg",
       skills: [
-        "⚡ Building responsive website front end using React-Redux",
-        "⚡ Developing mobile applications using Flutter, React Native and solo android apps using Kotlin",
-        "⚡ Creating application backend in Node, Express & Flask",
+        "⚡ Building robust software tools for data processing, automation, image analysis and reporting.",
+        "⚡ Writing maintainable code in Python, JavaScript and Vue.js using modern engineering practices.",
+        "⚡ Automating high-throughput workflows (e.g., 10,000+ images segmented and analyzed).",
+        "⚡ Experience in full-stack development (Laravel + Vue.js) and workflow optimization for real users.",
       ],
       softwareSkills: [
         {
-          skillName: "HTML5",
-          fontAwesomeClassname: "simple-icons:html5",
-          style: {
-            color: "#E34F26",
-          },
-        },
-        {
-          skillName: "CSS3",
-          fontAwesomeClassname: "fa-css3",
-          style: {
-            color: "#1572B6",
-          },
-        },
-        {
-          skillName: "Sass",
-          fontAwesomeClassname: "simple-icons:sass",
-          style: {
-            color: "#CC6699",
-          },
-        },
-        {
-          skillName: "JavaScript",
-          fontAwesomeClassname: "simple-icons:javascript",
-          style: {
-            backgroundColor: "#000000",
-            color: "#F7DF1E",
-          },
-        },
-        {
-          skillName: "ReactJS",
-          fontAwesomeClassname: "simple-icons:react",
-          style: {
-            color: "#61DAFB",
-          },
-        },
-        {
-          skillName: "NodeJS",
-          fontAwesomeClassname: "devicon-plain:nodejs-wordmark",
-          style: {
-            color: "#339933",
-          },
-        },
-        {
-          skillName: "NPM",
-          fontAwesomeClassname: "simple-icons:npm",
-          style: {
-            color: "#CB3837",
-          },
-        },
-        {
-          skillName: "Yarn",
-          fontAwesomeClassname: "simple-icons:yarn",
-          style: {
-            color: "#2C8EBB",
-          },
-        },
-        {
-          skillName: "Gatsby",
-          fontAwesomeClassname: "simple-icons:gatsby",
-          style: {
-            color: "#663399",
-          },
-        },
-        {
-          skillName: "Flutter",
-          fontAwesomeClassname: "simple-icons:flutter",
-          style: {
-            color: "#02569B",
-          },
-        },
-      ],
-    },
-    {
-      title: "Cloud Infra-Architecture",
-      fileName: "CloudInfraImg",
-      skills: [
-        "⚡ Experience working on multiple cloud platforms",
-        "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
-        "⚡ Deploying deep learning models on cloud to use on mobile devices",
-        "⚡ Setting up streaming jobs from DB to Server or vice-versa on GCP and AWS",
-      ],
-      softwareSkills: [
-        {
-          skillName: "GCP",
-          fontAwesomeClassname: "simple-icons:googlecloud",
-          style: {
-            color: "#4285F4",
-          },
-        },
-        {
-          skillName: "AWS",
-          fontAwesomeClassname: "simple-icons:amazonaws",
-          style: {
-            color: "#FF9900",
-          },
-        },
-        {
-          skillName: "Azure",
-          fontAwesomeClassname: "simple-icons:microsoftazure",
-          style: {
-            color: "#0089D6",
-          },
-        },
-        {
-          skillName: "Firebase",
-          fontAwesomeClassname: "simple-icons:firebase",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "PostgreSQL",
-          fontAwesomeClassname: "simple-icons:postgresql",
-          style: {
-            color: "#336791",
-          },
-        },
-        {
-          skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb",
-          style: {
-            color: "#47A248",
-          },
+          skillName: "Git & GitHub",
+          fontAwesomeClassname: "fa-github",
+          style: { color: "#181717" },
         },
         {
           skillName: "Docker",
           fontAwesomeClassname: "simple-icons:docker",
-          style: {
-            color: "#1488C6",
-          },
+          style: { color: "#1488C6" },
         },
         {
-          skillName: "Kubernetes",
-          fontAwesomeClassname: "simple-icons:kubernetes",
-          style: {
-            color: "#326CE5",
-          },
+          skillName: "JavaScript",
+          fontAwesomeClassname: "simple-icons:javascript",
+          style: { color: "#F7DF1E" },
+        },
+        {
+          skillName: "Vue.js",
+          fontAwesomeClassname: "simple-icons:vuedotjs",
+          style: { color: "#42B883" },
+        },
+        {
+          skillName: "REST APIs",
+          fontAwesomeClassname: "mdi:api",
+          style: { color: "#4CAF50" },
         },
       ],
     },
+
     {
-      title: "UI/UX Design",
-      fileName: "DesignImg",
+      title: "Bioengineering: Fabrication, Biomechanics & Biology",
+      fileName: "CloudInfraImg",
       skills: [
-        "⚡ Designing highly attractive user interface for mobile and web applications",
-        "⚡ Customizing logo designs and building logos from scratch",
-        "⚡ Creating the flow of application functionalities to optimize user experience",
+        "⚡ Fabricating and characterizing 3D-printed scaffolds and composite biomaterials for tissue engineering.",
+        "⚡ Skilled in chemical, mechanical and biological testing (rheology, SEM/EDS, FTIR, mechanical testing, cell assays).",
+        "⚡ Using imaging (microCT, microscopy, point clouds) to link design → structure → function.",
+        "⚡ Designing and operating dynamic bioreactor systems for perfusion and mechanical loading during in vitro testing.",
       ],
       softwareSkills: [
         {
-          skillName: "Adobe XD",
-          fontAwesomeClassname: "simple-icons:adobexd",
-          style: {
-            color: "#FF2BC2",
-          },
+          skillName: "3D Printing (DIW/FFF)",
+          fontAwesomeClassname: "mdi:printer-3d",
+          style: { color: "#FF9800" },
         },
         {
-          skillName: "Figma",
-          fontAwesomeClassname: "simple-icons:figma",
-          style: {
-            color: "#F24E1E",
-          },
+          skillName: "Autodesk (CAD)",
+          fontAwesomeClassname: "simple-icons:autodesk",
+          style: { color: "#0696D7" },
         },
         {
-          skillName: "Adobe Illustrator",
-          fontAwesomeClassname: "simple-icons:adobeillustrator",
-          style: {
-            color: "#FF7C00",
-          },
+          skillName: "Matlab",
+          imageSrc: "matlab.svg",
+          style: { width: "45px", height: "45px" },
         },
         {
-          skillName: "Inkscape",
-          fontAwesomeClassname: "simple-icons:inkscape",
-          style: {
-            color: "#000000",
-          },
+          skillName: "CellProfiler",
+          imageSrc: "cellprofiler.svg",
+          style: { width: "45px", height: "45px" },
+        },
+        {
+          skillName: "Ilastik",
+          imageSrc: "ilastik-icon.png",
+          style: { width: "45px", height: "45px" },
+        },
+      ],
+    },
+
+    {
+      title: "PhD, Leadership & Collaboration",
+      fileName: "DesignImg",
+      skills: [
+        "⚡ Completing a PhD in Complex Systems Engineering at UAI–Empa/ETH Zürich (data, imaging, biomechanics, materials).",
+        "⚡ Author/co-author of 10 peer-reviewed publications across materials, biomechanics and computational methods.",
+        "⚡ Mentored 8+ Master’s students and collaborated with interdisciplinary and international teams.",
+        "⚡ Strong autonomy, adaptability and ownership, delivering reliable results with an industry-oriented mindset.",
+      ],
+      softwareSkills: [
+        {
+          skillName: "Project Management",
+          fontAwesomeClassname: "mdi:clipboard-text-outline",
+          style: { color: "#00ACC1" },
+        },
+        {
+          skillName: "Scientific Writing",
+          fontAwesomeClassname: "mdi:file-document-edit-outline",
+          style: { color: "#6D4C41" },
+        },
+        {
+          skillName: "Team Leadership",
+          fontAwesomeClassname: "mdi:account-group",
+          style: { color: "#1E88E5" },
         },
       ],
     },
   ],
 };
 
-// Education Page
+// Competitive Programming / Sites – not really your focus, so keep it minimal or empty
 const competitiveSites = {
-  competitiveSites: [
-    {
-      siteName: "LeetCode",
-      iconifyClassname: "simple-icons:leetcode",
-      style: {
-        color: "#F79F1B",
-      },
-      profileLink: "https://leetcode.com/layman_brother/",
-    },
-    {
-      siteName: "HackerRank",
-      iconifyClassname: "simple-icons:hackerrank",
-      style: {
-        color: "#2EC866",
-      },
-      profileLink: "https://www.hackerrank.com/layman_brother",
-    },
-    {
-      siteName: "Codechef",
-      iconifyClassname: "simple-icons:codechef",
-      style: {
-        color: "#5B4638",
-      },
-      profileLink: "https://www.codechef.com/users/ashutosh_1919",
-    },
-    {
-      siteName: "Codeforces",
-      iconifyClassname: "simple-icons:codeforces",
-      style: {
-        color: "#1F8ACB",
-      },
-      profileLink: "http://codeforces.com/profile/layman_brother",
-    },
-    {
-      siteName: "Hackerearth",
-      iconifyClassname: "simple-icons:hackerearth",
-      style: {
-        color: "#323754",
-      },
-      profileLink: "https://www.hackerearth.com/@ashutosh391",
-    },
-    {
-      siteName: "Kaggle",
-      iconifyClassname: "simple-icons:kaggle",
-      style: {
-        color: "#20BEFF",
-      },
-      profileLink: "https://www.kaggle.com/laymanbrother",
-    },
-  ],
+  competitiveSites: [],
 };
-
+// Education
 const degrees = {
   degrees: [
     {
-      title: "Indian Institute of Information Technology Kurnool",
-      subtitle: "B.Tech. in Computer Engineering",
-      logo_path: "iiitk_logo.png",
-      alt_name: "IIITDM Kurnool",
-      duration: "2016 - 2020",
+      title: "Universidad Adolfo Ibáñez (UAI) & Empa / ETH Zürich",
+      subtitle: "PhD in Complex Systems Engineering (candidate)",
+      logo_path: "logo-uai-v2.png",
+      alt_name: "UAI & Empa / ETH Zürich",
+      duration: "Apr 2022 – May 2026 (expected)",
       descriptions: [
-        "⚡ I have studied basic software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.",
-        "⚡ Apart from this, I have done courses on Deep Learning, Data Science, Cloud Computing and Full Stack Development.",
-        "⚡ I was selected for Merit cum Means Scholarship which is given to top 10% of students in college. I have received award from respected director for consistently best performance in academics.",
+        'Thesis: "Investigating the mechanical and biological properties of seeded 3D-Bioplotted Composite Scaffolds in an in-vitro dynamic bone culture model."',
+        "Multidisciplinary research integrating complex systems, bioengineering and advanced manufacturing with a data-driven approach to materials and biomechanics.",
       ],
-      website_link: "http://iiitk.ac.in",
+      website_link: "",
     },
     {
-      title: "Indiana University Bloomington",
-      subtitle: "M.S. in Computer Science",
-      logo_path: "iu_logo.png",
-      alt_name: "Indiana University Bloomington",
-      duration: "2021 - 2023",
+      title: "Universidad Adolfo Ibáñez (UAI)",
+      subtitle: "MSc in Bioengineering (GPA: 6.5/7.0)",
+      logo_path: "logo-uai-v2.png",
+      alt_name: "UAI",
+      duration: "Mar 2020 – Dec 2022",
       descriptions: [
-        "⚡ I have taken varity of courses related to Artificial Intelligence which correspond to Explainable AI, Graph Machine Learning, Computer Vision etc.",
-        "⚡ Apart from this, I have also done research assistantship. As part of it, I have worked on creating new algorithms in Graph ML and Network Science.",
-        "⚡ During my time at university, I was also associated with multimedia department. As part of it, I have worked on some documentry films and interviews.",
+        'Thesis: "Fabrication and Characterization of 3D-Bioplotting of Polycaprolactone–Bioactive Glass Composite Scaffolds for Tissue Engineering Applications."',
+        "Thesis grade: 7.0/7.0.",
+        "Focused on experimental design and analysis: design of experiments (DoE), project design and evaluation, and statistical modeling for bioengineering applications.",
       ],
-      website_link: "https://www.indiana.edu/",
+      website_link: "https://www.uai.cl/",
+    },
+    {
+      title: "Universidad Adolfo Ibáñez (UAI)",
+      subtitle: "Engineering in Bioengineering (Professional Degree)",
+      logo_path: "logo-uai-v2.png",
+      alt_name: "UAI",
+      duration: "Mar 2015 – Jul 2021",
+      descriptions: [
+        'Thesis: "Design-Fidelity-Structure-Assessment of controlled geometry 3D-bioplotted composite porous scaffolds."',
+        "Thesis grade: 6.9/7.0.",
+        "Comprehensive bioengineering training on using biological insight as input for engineering problem-solving, complemented by courses in innovation, management and business.",
+      ],
+      website_link: "https://www.uai.cl/",
+    },
+    {
+      title: "Universidad Adolfo Ibáñez (UAI)",
+      subtitle: "BSc in Bioengineering",
+      logo_path: "logo-uai-v2.png",
+      alt_name: "UAI",
+      duration: "Mar 2015 – Jul 2021",
+      descriptions: [
+        "Built a strong foundation in mathematics, physics, chemistry and biology, learning to break down large, complex problems into tractable parts while developing solid software/IT skills and a grounding in business concepts.",
+      ],
+      website_link: "https://www.uai.cl/",
     },
   ],
 };
 
+// Certifications / Awards
 const certifications = {
   certifications: [
     {
-      title: "Machine Learning",
-      subtitle: "- Andrew Ng",
-      logo_path: "stanford_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/verify/22MTSSC5WDTM",
-      alt_name: "Stanford University",
-      color_code: "#8C151599",
+      title: "Top 100 Young Leaders in Chile",
+      subtitle: "Recognized among Chile’s Top 100 Young Leaders",
+      logo_path: "uai_v2.PNG",
+      certificate_link: "",
+      alt_name: "Top 100 Young Leaders",
+      color_code: "white",
+      duration: "2023",
     },
     {
-      title: "Deep Learning",
-      subtitle: "- Andrew Ng",
-      logo_path: "deeplearning_ai_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/specialization/H8CPSFXAJD2G",
-      alt_name: "deeplearning.ai",
-      color_code: "#00000099",
+      title:
+        "Data Science and Analytics Career Paths and Certifications: First Steps",
+      subtitle:
+        "LinkedIn Learning – Career Path Planning, Data Analytics, Tech Career Skills",
+      logo_path: "linkedin.svg",
+      certificate_link: "",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "Nov 2025", // Extracted from certificate
     },
     {
-      title: "ML on GCP",
-      subtitle: "- GCP Training",
-      logo_path: "google_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/specialization/EB4VJARK8647",
-      alt_name: "Google",
-      color_code: "#0C9D5899",
+      title: "The Non-Technical Skills of Effective Data Scientists",
+      subtitle: "LinkedIn Learning – Data Science Soft Skills",
+      logo_path: "linkedin.svg",
+      certificate_link: "",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "Nov 2025",
     },
     {
-      title: "Data Science",
-      subtitle: "- Alex Aklson",
-      logo_path: "ibm_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/specialization/PLEAPCSJBZT5",
-      alt_name: "IBM",
-      color_code: "#1F70C199",
-    },
-    {
-      title: "Big Data",
-      subtitle: "- Kim Akers",
-      logo_path: "microsoft_logo.png",
-      certificate_link:
-        "https://drive.google.com/file/d/164zKCFOsI4vGqokc-Qj-e_D00kLDHIrG/view",
-      alt_name: "Microsoft",
-      color_code: "#D83B0199",
-    },
-    {
-      title: "Advanced Data Science",
-      subtitle: "- Romeo Kienzler",
-      logo_path: "ibm_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/verify/BH2T9BRU87BH",
-      alt_name: "IBM",
-      color_code: "#1F70C199",
-    },
-    {
-      title: "Advanced ML on GCP",
-      subtitle: "- GCP Training",
-      logo_path: "google_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/verify/5JZZM7TNQ2AV",
-      alt_name: "Google",
-      color_code: "#0C9D5899",
-    },
-    {
-      title: "DL on Tensorflow",
-      subtitle: "- Laurence Moroney",
-      logo_path: "deeplearning_ai_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/verify/6T4DCUGNK8J8",
-      alt_name: "deeplearning.ai",
-      color_code: "#00000099",
-    },
-    {
-      title: "Fullstack Development",
-      subtitle: "- Jogesh Muppala",
-      logo_path: "coursera_logo.png",
-      certificate_link:
-        "https://www.coursera.org/account/accomplishments/certificate/NRANJA66Y2YA",
-      alt_name: "Coursera",
-      color_code: "#2A73CC",
-    },
-    {
-      title: "Kuberenetes on GCP",
-      subtitle: "- Qwiklabs",
-      logo_path: "gcp_logo.png",
-      certificate_link:
-        "https://google.qwiklabs.com/public_profiles/e4d5a92b-faf6-4679-a70b-a9047c0cd750",
-      alt_name: "GCP",
-      color_code: "#4285F499",
-    },
-    {
-      title: "Cryptography",
-      subtitle: "- Saurabh Mukhopadhyay",
-      logo_path: "nptel_logo.png",
-      certificate_link:
-        "https://drive.google.com/open?id=1z5ExD_QJVdU0slLkp8CBqSF3-C3g-ro_",
-      alt_name: "NPTEL",
-      color_code: "#FFBB0099",
-    },
-    {
-      title: "Cloud Architecture",
-      subtitle: "- Qwiklabs",
-      logo_path: "gcp_logo.png",
-      certificate_link:
-        "https://google.qwiklabs.com/public_profiles/5fab4b2d-be6f-408c-8dcb-6d3b58ecb4a2",
-      alt_name: "GCP",
-      color_code: "#4285F499",
+      title: "A Day in the Life of a Data Scientist",
+      subtitle: "LinkedIn Learning – Career Management & Tech Career Skills",
+      logo_path: "linkedin.svg",
+      certificate_link: "",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "Nov 2025",
     },
   ],
 };
 
-// Experience Page
+// Experience
 const experience = {
   title: "Experience",
-  subtitle: "Work, Internship and Volunteership",
+  subtitle: "Research, Industry & Volunteering",
   description:
-    "I have worked with many evolving startups as ML and DL Developer, Designer and Software Architect. I have also worked with some well established companies mostly as AI Developer. I love organising events and that is why I am also involved with many opensource communities as a representative.",
+    "I work at the intersection of data science, imaging, biomechanics and advanced manufacturing. I enjoy turning complex experimental datasets into tools and insights that help researchers, clinicians and industry make better decisions.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -534,148 +335,203 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "Machine Learning Engineer",
-          company: "TikTok Inc.",
-          company_url: "https://www.tiktok.com/en/",
-          logo_path: "tiktok_logo.png",
-          duration: "June 2023 - Present",
-          location: "San Jose, CA, USA",
-          description:
-            "Improving ads ranking models on the core TikTok product. Experience working on modeling two-tower architectures like DeepFM, Wide & deep learning, etc. Working on Large Language Models (LLM) pretraining and Large Multi-modal Model (LMM) finetuning strategies.",
-          color: "#000000",
+          title: "PhD Researcher - Academic Guest",
+          company: "Empa / ETH Zürich",
+          department: "Mechanical Systems Engineering",
+          company_url: "https://www.empa.ch/",
+          logo_path: "empa-logo.png",
+          duration: "Jul 2025 – Nov 2025",
+          location: "Dübendorf, Switzerland",
+          country: "switzerland",
+          description: [
+            "Analyzing 10,000+ microscopy images using automated segmentation pipelines combining machine learning tools and custom algorithms.",
+            "Building reproducible data-processing workflows to extract quantitative biological metrics for scaffold–cell interaction studies.",
+            "Integrating imaging, mechanics and materials data into unified datasets to support model development and decision-making.",
+          ],
+          color: "#00506A",
         },
+
         {
-          title: "Associate AI Engineer",
-          company: "Legato Health Technology",
-          company_url: "https://legatohealthtech.com/",
-          logo_path: "legato_logo.png",
-          duration: "June 2020 - Aug 2021",
-          location: "Hyderabad, Telangana",
-          description:
-            "I am working on automating healthcare products. The projects involve automation for process improvements and for significantly enhancing the profits. I am currently working on Cancer Survival and Reoccurence Prediction. Our goal is to make AI system which scales and removes doctor dependency as much as possible.",
-          color: "#0879bf",
+          title: "PhD Researcher",
+          company: "Universidad Adolfo Ibáñez (UAI)",
+          department: "Bioengineering Department",
+          company_url: "https://www.uai.cl/",
+          logo_path: "logo-uai-v2.png",
+          duration: "Oct 2024 – Jun 2025",
+          location: "Viña del Mar, Chile",
+          country: "chile",
+          description: [
+            "Applied a custom dynamic bioreactor system to in vitro bone tissue engineering experiments, combining perfusion and mechanical stimulation.",
+            "Coordinated interdisciplinary projects linking 3D printing, biomaterials and biological assays within the PhD research line.",
+            "Supported Master’s students with data analysis, figure preparation and scientific writing for thesis completion.",
+          ],
+          color: "#004080",
         },
+
         {
-          title: "Android and ML Developer",
-          company: "Muffito Incorporation",
-          company_url: "https://www.linkedin.com/company/muffito-inc/about/",
-          logo_path: "muffito_logo.png",
-          duration: "May 2018 - Oct 2018",
-          location: "Pune, Maharashtra",
-          description:
-            "I have created complete Android Application for locating Pub, Bar and beverage shops around you. I have also worked on implementation of algorithms for Face Detection, Text extraction from Image. I was involved in a team for creating complete software architecure of mobile and web application as well as admin panel for company.",
-          color: "#9b1578",
+          title: "PhD Researcher - Academic Guest",
+          company: "Empa / ETH Zürich",
+          department: "Mechanical Systems Engineering",
+          company_url: "https://www.empa.ch/",
+          logo_path: "empa-logo.png",
+          duration: "Jul 2023 – Sep 2024",
+          location: "Dübendorf, Switzerland",
+          country: "switzerland",
+          description: [
+            "Led the development of 10+ bioactive composite formulations, integrating synthesis, 3D printing and multi-scale characterization.",
+            "Characterized 200+ scaffold samples using mechanical, thermal, chemical and imaging methods, accelerating workflows by ~40%.",
+            "Contributed to peer-reviewed publications and ongoing collaborative projects in biomaterials, biomechanics and additive manufacturing.",
+          ],
+          color: "#00506A",
         },
+
         {
-          title: "Android Developer",
-          company: "FreeCopy Pvt. Ltd.",
-          company_url: "https://www.linkedin.com/company/freecopy/about/",
-          logo_path: "freecopy_logo.png",
-          duration: "Nov 2017 - Dec 2017",
-          location: "Ahmedabad, Gujarat",
-          description:
-            "FreeCopy is the Start up from Indian Institute of Management, Ahmedabad. I have changed the integration of the whole app from Google to Firebase. I learnt the efﬁcient ways of Data communications like Retroﬁt, Eventbus etc. I experienced the real time start up. I learnt the Design thinking of UI on perspective of People.",
-          color: "#fc1f20",
+          title: "PhD Researcher",
+          company: "Universidad Adolfo Ibáñez (UAI)",
+          department: "Bioengineering Department",
+          company_url: "https://www.uai.cl/",
+          logo_path: "logo-uai-v2.png",
+          duration: "May 2022 – Jun 2023",
+          location: "Viña del Mar, Chile",
+          country: "chile",
+          description: [
+            "Designed and validated a dynamic bioreactor system for in vitro bone tissue engineering, enabling combined perfusion and mechanical loading.",
+            "Connected 3D-bioplotted composite scaffolds with biological assays to study mechano-biological response in controlled in vitro settings.",
+            "Provided technical guidance to students in experimental design, data collection and documentation of lab protocols.",
+          ],
+          color: "#004080",
         },
-      ],
-    },
-    {
-      title: "Internships",
-      experiences: [
+
         {
-          title: "Machine Learning Intern",
-          company: "TikTok Inc.",
-          company_url: "https://www.tiktok.com/en/",
-          logo_path: "tiktok_logo.png",
-          duration: "May 2022 - Aug 2022",
-          location: "San Francisco, USA",
-          description:
-            "Building new features on the backend recommendation system, specifically ranking algorithms for Ads that touch hundreds of millions of people around the world. Improving online and offline content ranking algorithms by performing hard sample data replays for training steps.",
-          color: "#000000",
+          title: "Graduate Research Assistant",
+          company: "Universidad Adolfo Ibáñez (UAI)",
+          department: "Bioengineering Department",
+          company_url: "https://www.uai.cl/",
+          logo_path: "logo-uai-v2.png",
+          duration: "Dec 2021 – Apr 2022",
+          location: "Santiago & Viña del Mar, Chile (remote/on-site)",
+          country: "chile",
+          description: [
+            "Supported biomaterials and tissue engineering projects by coordinating sample preparation, imaging and mechanical testing.",
+            "Contributed to grant proposals and internal reports by summarizing experimental progress and key quantitative results.",
+          ],
+          color: "#004080",
         },
+
         {
-          title: "Data Science Research Intern",
-          company: "Delhivery Pvt. Ltd.",
-          company_url: "https://www.delhivery.com/",
-          logo_path: "delhivery_logo.png",
-          duration: "May 2019 - Sept 2019",
-          location: "Gurgaon, Haryana",
-          description:
-            "I have worked on project of predicting freight rates based on previous data. There were two objectives: (1) To build a forecasting engine to predict daily freight rates. (2) To embed feature in the model which can explain the seasonal major changes in freight rate based on regions and locations. I have closely worked with deep learning models in combination with statistical methods to create solution for this. At the end of internship, I had created model deployed on AWS EC2 with the use of Kafka stream jobs, ElasticSearch and PostgreSQL.",
-          color: "#ee3c26",
+          title: "Master’s Internship",
+          company: "Empa / ETH Zürich",
+          department: "Mechanical Systems Engineering",
+          company_url: "https://www.empa.ch/",
+          logo_path: "empa-logo.png",
+          duration: "Mar 2021 – Nov 2021",
+          location: "Dübendorf, Switzerland",
+          country: "switzerland",
+          description: [
+            "Achieved ~98% printing success rate and improved dimensional accuracy to within ~4% error using custom Python scripts and process optimization.",
+            "Systematically linked ink rheology, printing parameters and scaffold fidelity to improve design-to-print translation.",
+            "Contributed to the preparation and submission of methods papers on rheology-based parameter prediction for DIW 3D printing.",
+          ],
+          color: "#00506A",
         },
+
         {
-          title: "Data Science Intern",
-          company: "Intel Indexer LLC",
-          company_url:
-            "https://opencorporates.com/companies/us_dc/EXTUID_4170286",
-          logo_path: "intel_logo.jpg",
-          duration: "Nov 2018 - Dec 2018",
-          location: "Work From Home",
-          description:
-            "This is financial Solution Company. I have made Supervised Learning model for the company which can perform time series analysis on Stock price data for 32 companies. I have built LSTM Neural Networks Model and trained the data of 32 companies for last 2 years. This model is also used for forecasting.",
-          color: "#0071C5",
+          title: "Graduate Research Assistant",
+          company: "Universidad Adolfo Ibáñez (UAI)",
+          department: "Engineering Department",
+          company_url: "https://www.uai.cl/",
+          logo_path: "logo-uai-v2.png",
+          duration: "Jan 2020 – Feb 2021",
+          location: "Santiago & Viña del Mar, Chile (remote/on-site)",
+          country: "chile",
+          description: [
+            "Supported biomaterials and 3D-printing projects and began mentoring students on experimental design and data handling.",
+          ],
+          color: "#004080",
         },
-      ],
-    },
-    {
-      title: "Volunteerships",
-      experiences: [
+
         {
-          title: "Google Explore ML Facilitator",
-          company: "Google",
-          company_url: "https://about.google/",
-          logo_path: "google_logo.png",
-          duration: "June 2019 - April 2020",
-          location: "Hyderabad, Telangana",
-          description:
-            "Explore Machine Learning (ML) is a Google-sponsored program for university students to get started with Machine Learning. The curriculum offers 3 tracks of ML Content (Beginner, Intermediate, Advanced) and relies on university student facilitators to train other students on campus and to build opensource projects under this program.",
-          color: "#4285F4",
+          title: "Bachelor Internship (IAESTE)",
+          company: "Empa / ETH Zürich",
+          department: "Mechanical Systems Engineering",
+          company_url: "https://www.empa.ch/",
+          logo_path: "empa-logo.png",
+          duration: "Mar 2019 – Dec 2019",
+          location: "Dübendorf, Switzerland",
+          country: "switzerland",
+          description: [
+            "Designed and validated 6+ standardized protocols for chemical, thermal and mechanical characterization of polymer–ceramic scaffolds.",
+            "Established laboratory workflows for scaffold assessment that remain in use by the group.",
+            "Contributed to a peer-reviewed publication by supporting data acquisition, analysis and methods documentation.",
+          ],
+          color: "#00506A",
         },
+
         {
-          title: "Microsoft Student Partner",
-          company: "Microsoft",
-          company_url: "https://www.microsoft.com/",
-          logo_path: "microsoft_logo.png",
-          duration: "Aug 2019 - May 2020",
-          location: "Hyderabad, Telangana",
-          description:
-            "Microsoft Student Partner is a program for university students to lead the awareness and use of Cloud especially Azure tools in the development of their projects and startups. Under this program, I have organised hands on workshops and seminars to teach Cloud Computing concepts to students.",
-          color: "#D83B01",
+          title: "Undergraduate Research Assistant",
+          company: "Universidad Adolfo Ibáñez (UAI)",
+          department: "Engineering Department",
+          company_url: "https://www.uai.cl/",
+          logo_path: "logo-uai-v2.png",
+          duration: "Jul 2016 – Feb 2019",
+          location: "Santiago, Chile",
+          country: "chile",
+          description: [
+            "Designed and validated 3 standardized methods for 3D-printed scaffold fabrication and mechanical testing, enabling reproducible workflows.",
+            "Investigated how print fidelity, porosity and geometry affect mechanical performance of porous scaffolds.",
+            "Supported day-to-day lab activities, including sample preparation, testing and preliminary data analysis.",
+          ],
+          color: "#004080",
         },
+
         {
-          title: "Mozilla Campus Captain",
-          company: "Mozilla",
-          company_url: "https://www.mozilla.org/",
-          logo_path: "mozilla_logo.png",
-          duration: "Oct 2019 - May 2020",
-          location: "Kurnool, Andhra Pradesh",
-          description:
-            "My responsibility for this program was to create opensource environment in college and in the city. We have organised multiple hackathons on the problems collected by ordinary people from Kurnool city. We have build opensource community of our own college. The community is available at dsc_iiitdmk on github.",
-          color: "#000000",
+          title: "Teaching Assistant (10+ courses)",
+          company: "Universidad Adolfo Ibáñez (UAI)",
+          department: "Engineering Department",
+          company_url: "https://www.uai.cl/",
+          logo_path: "logo-uai-v2.png",
+          duration: "Aug 2016 – Dec 2022",
+          location: "Santiago, Chile",
+          country: "chile",
+          description: [
+            "Assisted more than 10 courses from introductory to senior level, including programming, calculus, microeconomics, tissue engineering, biomaterials and biomechanics.",
+            "Led problem-solving sessions, tutorials and review workshops to support student learning.",
+            "Contributed to exam and assignment design, grading and feedback, ensuring fair and consistent assessment.",
+          ],
+          color: "#004080",
         },
+
         {
-          title: "Developer Students Club Member",
-          company: "DSC IIITDM Kurnool",
-          company_url:
-            "https://www.linkedin.com/company/developer-students-club-iiitdm-kurnool",
-          logo_path: "dsc_logo.png",
-          duration: "Jan 2018 - May 2020",
-          location: "Kurnool, Andhra Pradesh",
-          description:
-            "We have well established developer club in college which is directly associated with Google Developers. We have developed many interdisciplinary projects under the membership of this club. We have organised workshops and activities on Android Application Development, Flutter and React JS.",
-          color: "#0C9D58",
+          title: "Senior Software Developer",
+          company: "CloudLab – Sonda & UAI",
+          department: "Software Development",
+          company_url: "https://www.sonda.com/",
+          logo_path: "sonda.png",
+          duration: "Nov 2016 – Mar 2017",
+          location: "Santiago, Chile",
+          country: "chile",
+          description: [
+            "Led development of a Laravel–Vue.js customer management dashboard for Sonda employees, used daily by 100+ users.",
+            "Coordinated feature planning, implementation and testing within a small development team.",
+            "Improved internal administrative workflows by translating user needs into robust software features.",
+          ],
+          color: "#FF6F00",
         },
+
         {
-          title: "Developer Program Member",
-          company: "Github",
-          company_url: "https://github.com/",
-          logo_path: "github_logo.png",
-          duration: "July 2019 - PRESENT",
-          location: "Work From Home",
-          description:
-            "I am actively contributing to many opensource projects. I have contributed to projects of organisations like Tensorflow, Uber, Facebook, Google, Scikit-learn, Kiwix, Sympy, Python, NVLabs, Fossasia, Netrack, Keras etc. These contributions include bug fixes, feature requests and formulating proper documentation for project.",
-          color: "#181717",
+          title: "Junior Software Developer",
+          company: "CloudLab – Sonda & UAI",
+          department: "Software Development",
+          company_url: "https://www.sonda.com/",
+          logo_path: "sonda.png",
+          duration: "Jun 2016 – Sept 2016",
+          location: "Santiago, Chile",
+          country: "chile",
+          description: [
+            "Contributed to full-stack development using Laravel and Vue.js for internal web applications.",
+            "Delivered high-quality features on a tight timeline, leading to promotion to Senior Developer in only 3 months (vs. typical 1.5 years).",
+          ],
+          color: "#FF6F00",
         },
       ],
     },
@@ -686,38 +542,194 @@ const experience = {
 const projectsHeader = {
   title: "Projects",
   description:
-    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+    "I build data and imaging pipelines that connect experimental setups (bioreactors, 3D printing, retrievals) with robust analytics and ML models. Many of my projects are part of larger research collaborations in biomaterials, biomechanics and tissue engineering.",
   avatar_image_path: "projects_image.svg",
 };
 
+// (Optional) highlight a few key projects explicitly if your template supports it
+// Example structure if needed by your template:
+// const projects = {
+//   data: [ ... ]
+// };
+
+// Publications
 const publicationsHeader = {
   title: "Publications",
-  description: "Some of my published Articles, Blogs and Research.",
+  description:
+    "Peer-reviewed work built at the intersection of biomaterials, additive manufacturing, biomechanics and machine-learning–driven quantitative analysis",
   avatar_image_path: "projects_image.svg",
 };
 
 const publications = {
   data: [
     {
-      id: "neuro-symbolic-sudoku-solver",
-      name: "Neuro-Symbolic Sudoku Solver",
-      createdAt: "2023-07-02T00:00:00Z",
-      description: "Paper published in KDD KiML 2023",
-      url: "https://arxiv.org/abs/2307.00653",
+      id: "seashells-to-scaffolds",
+      title:
+        "From Seashells to Scaffolds: A Comparative Chemical, Mechanical, and Biological Characterization of Natural and Synthetic Calcium Carbonate in 3D-Printed PCL Composites",
+      description:
+        "In-preparation study comparing natural seashell-derived and synthetic CaCO₃ in PCL composite scaffolds.",
+      url: "", // add DOI or preprint link when available
+      journal: "Biomaterials Advances (in preparation)",
+      year: 2025,
+      type: "Manuscript",
+      isFirstAuthor: true,
+      bullets: [
+        "Synthesized natural seashell-derived bioactive material, compounded PCL composites, and 3D-printed scaffolds.",
+        "Compared chemical, mechanical and biological performance of natural versus synthetic calcium carbonate fillers.",
+        "Applied microscopy imaging and ML-based cell morphology analysis to quantify biological response.",
+      ],
     },
     {
-      id: "mdp-diffusion",
-      name: "MDP-Diffusion",
-      createdAt: "2023-09-19T00:00:00Z",
-      description: "Blog published in Paperspace",
-      url: "https://blog.paperspace.com/mdp-diffusion/",
+      id: "pcl-bioglass-biocompatibility",
+      title:
+        "Biocompatibility of Polycaprolactone-Bioglass Composite Scaffolds: Cellular and Molecular Insights for Tissue Engineering",
+      description:
+        "In-preparation work on the biocompatibility of PCL–bioglass scaffolds, from fabrication to cellular response.",
+      url: "",
+      journal: "Biomaterials Advances (in preparation)",
+      year: 2025,
+      type: "Manuscript",
+      isFirstAuthor: true,
+      bullets: [
+        "Led the full fabrication workflow from material compounding and 3D printing to post-processing.",
+        "Performed morphological, chemical and biological analyses to evaluate scaffold performance.",
+        "Combined rheology, SEM/EDS and confocal imaging to interpret cellular and molecular responses.",
+      ],
     },
     {
-      id: "consistency-models",
-      name: "Consistency Models",
-      createdAt: "2023-10-12T00:00:00Z",
-      description: "Blog published in Paperspace",
-      url: "https://blog.paperspace.com/consistency-models/",
+      id: "argonpecten-shells",
+      title:
+        "Biocompatibility and Morphological Analysis of Argopecten purpuratus Carbonate Shells for Tissue Engineering Applications with Human Gingival Mesenchymal Stem Cells",
+      description:
+        "Submitted study on carbonate shells as biomaterials for tissue engineering applications.",
+      url: "", // add DOI when accepted
+      journal: "Materials Today Communications (submitted)",
+      year: 2025,
+      type: "Journal article",
+      isFirstAuthor: false,
+      bullets: [
+        "Contributed to manuscript writing and interpretation of experimental results.",
+        "Performed microCT-based and chemical characterization of Argopecten purpuratus shells.",
+        "Supported data visualization and figure preparation for the publication.",
+      ],
+    },
+    {
+      id: "rheology-methods",
+      title:
+        "Methodology to Predict 3D Printing Parameters of Custom-Made Inks Based on Characterization of Ink Rheology",
+      description:
+        "Under-review methods paper linking ink rheology to optimal printing parameters.",
+      url: "", // add DOI when available
+      journal: "MethodsX (under review)",
+      year: 2025,
+      type: "Methods paper",
+      isFirstAuthor: true,
+      bullets: [
+        "Developed and validated analytical formulas correlating viscosity, shear rate and print fidelity.",
+        "Reduced trial-and-error in parameter selection for custom inks in DIW 3D printing.",
+        "Implemented Python-based models for rheology-informed printing parameter prediction.",
+      ],
+    },
+    {
+      id: "porme",
+      title:
+        "PorMe: A validated open-source image-based pore size and porosity measurement tool for 3D-printed structures",
+      description: "Open-source tool for pore and porosity quantification.",
+      url: "https://doi.org/10.1016/j.mex.2025.103611",
+      journal: "MethodsX",
+      year: 2025,
+      type: "Methods paper",
+      isFirstAuthor: true,
+      bullets: [
+        "Developed an automated open-source tool for pore size and porosity quantification of 3D-printed scaffolds.",
+        "Enabled reproducible, user-friendly analysis of complex porous structures from 2D/3D imaging data.",
+        "Combined Python, image analysis and algorithm development to support research and quality control.",
+      ],
+    },
+    {
+      id: "pcl-bg-polymers-2025",
+      title:
+        "Effect of Processing Parameters on the Printability and Mechano-Biological Properties of Polycaprolactone–Bioactive Glass Composites for 3D-Printed Scaffold Fabrication",
+      description:
+        "Processing–structure–function study of PCL–bioactive glass composite scaffolds.",
+      url: "https://doi.org/10.3390/polym17111554",
+      journal: "Polymers",
+      year: 2025,
+      type: "Journal article",
+      isFirstAuthor: true,
+      bullets: [
+        "Investigated how 3D-printing parameters influence scaffold architecture, fidelity and cell response.",
+        "Covered synthesis, manufacturing, characterization and analysis of polymer–ceramic scaffolds for bone regeneration.",
+        "Used rheology, SEM and biological assays to link processing conditions to mechano-biological performance.",
+      ],
+    },
+    {
+      id: "dreyer-jor-2024",
+      title:
+        "The Influence of Implant Design and Limb Alignment on In Vivo Wear Rates of Fixed-Bearing and Rotating-Platform Knee Implant Retrievals",
+      description:
+        "Retrieval study on knee implants assessing design and alignment effects on wear.",
+      url: "https://doi.org/10.1002/jor.25734",
+      journal: "Journal of Orthopaedic Research",
+      year: 2024,
+      type: "Journal article",
+      isFirstAuthor: false,
+      bullets: [
+        "Supported quantitative analysis of retrieved knee implants and in vivo wear evaluation.",
+        "Contributed to mechanical testing and data processing workflows.",
+        "Collaborated with an interdisciplinary team in orthopaedic biomechanics.",
+      ],
+    },
+    {
+      id: "polymers-2022-scaling",
+      title:
+        "Height-to-Diameter Ratio and Porosity Strongly Influence Bulk Compressive Mechanical Properties of 3D-Printed Polymer Scaffolds",
+      description:
+        "Co–first author work on mechanical scaling effects in 3D-printed scaffolds.",
+      url: "https://doi.org/10.3390/polym14225017",
+      journal: "Polymers",
+      year: 2022,
+      type: "Journal article",
+      isFirstAuthor: true, // co–first, but you're named first
+      bullets: [
+        "Led design, printing and testing of 3D-printed polymer scaffolds to analyze geometric scaling.",
+        "Quantified how height-to-diameter ratio and porosity affect bulk compressive properties.",
+        "Combined mechanical testing, microCT and data analysis to understand structure–function relationships.",
+      ],
+    },
+    {
+      id: "shape-fidelity-2022",
+      title:
+        "Shape Fidelity, Mechanical and Biological Performance of 3D-Printed Polycaprolactone–Bioactive Glass Composite Scaffolds",
+      description:
+        "Study on shape fidelity and performance of PCL–bioactive glass composite scaffolds.",
+      url: "https://doi.org/10.1016/j.msec.2021.112540",
+      journal: "Biomaterials Advances",
+      year: 2022,
+      type: "Journal article",
+      isFirstAuthor: false, // shared first in CV; you can toggle if you want to emphasise
+      bullets: [
+        "Worked on synthesis, manufacturing, characterization and analysis of polymer–ceramic scaffolds.",
+        "Evaluated shape fidelity, mechanical behavior and biological performance for bone regeneration.",
+        "Used microscopy, mechanical testing and statistical analysis to link composition and performance.",
+      ],
+    },
+    {
+      id: "msec-2021-structure-function",
+      title:
+        "Structure–Function Assessment of 3D-Printed Porous Scaffolds by a Low-Cost/Open-Source FFF Printer",
+      description:
+        "Evaluation of porous scaffolds printed with a low-cost FFF system.",
+      url: "https://doi.org/10.1016/j.msec.2021.111945",
+      journal: "Materials Science and Engineering C",
+      year: 2021,
+      type: "Journal article",
+      isFirstAuthor: false,
+      bullets: [
+        "Evaluated printing fidelity and mechanical properties using low-cost, open-source FFF technology.",
+        "Linked structural parameters to mechanical response of 3D-printed porous scaffolds.",
+        "Promoted reproducible research using open-source tools and workflows.",
+      ],
     },
   ],
 };
@@ -726,31 +738,31 @@ const publications = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "animated_ashutosh.png",
+    profile_image_path: "personal.jpg", // replace with your own avatar
     description:
-      "I am available on almost every social media. You can message me, I will reply within 24 hours. I can help you with ML, AI, React, Android, Cloud and Opensource Development.",
+      "Actively seeking Data Science / ML / AI roles in biomedical, engineering or industrial settings. I enjoy working at the interface of AI, imaging and engineering. Feel free to reach out if you’re working on data-driven solutions in healthcare or advanced manufacturing.",
   },
   blogSection: {
-    title: "Blogs",
+    title: "Writing",
     subtitle:
-      "I like to document some of my experiences in professional career journey as well as some technical knowledge sharing.",
-    link: "https://blogs.ashutoshhathidara.com/",
+      "I occasionally write about imaging, data workflows and research-to-industry transitions.",
+    link: "https://medium.com/@JICR",
     avatar_image_path: "blogs_image.svg",
   },
   addressSection: {
     title: "Address",
-    subtitle: "Saratoga Ave, San Jose, CA, USA 95129",
-    locality: "San Jose",
-    country: "USA",
-    region: "California",
-    postalCode: "95129",
-    streetAddress: "Saratoga Avenue",
+    subtitle: "Dübendorf, Zürich, Switzerland",
+    locality: "Dübendorf",
+    country: "Switzerland",
+    region: "Zürich",
+    postalCode: "8600",
+    streetAddress: "",
     avatar_image_path: "address_image.svg",
-    location_map_link: "https://maps.app.goo.gl/NvYZqa34Wye4tpS17",
+    location_map_link: "https://maps.app.goo.gl/cJ8jtbEJTQSZhFek8",
   },
   phoneSection: {
-    title: "",
-    subtitle: "",
+    title: "Phone",
+    subtitle: "+41 78 339 64 47",
   },
 };
 

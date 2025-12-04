@@ -91,6 +91,18 @@
 .repo-languages {
   margin-left: auto;
   margin-right: 0px;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.language-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  display: inline-block;
 }
 
 @media (max-width: 1200px) {

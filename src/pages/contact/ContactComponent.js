@@ -4,14 +4,13 @@ import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import BlogsImg from "./BlogsImg";
 import AddressImg from "./AddressImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
 import { greeting, contactPageData } from "../../portfolio.js";
+import { trackOutboundClick } from "../../utils/analytics"; // ⬅️ added
 
 const ContactData = contactPageData.contactSection;
-const blogSection = contactPageData.blogSection;
 const addressSection = contactPageData.addressSection;
 const phoneSection = contactPageData.phoneSection;
 
@@ -22,12 +21,20 @@ class Contact extends Component {
       <div className="contact-main">
         <Header theme={theme} />
         <div className="basic-contact">
+          {/* === PROFILE / CONTACT TEXT === */}
           <Fade bottom duration={1000} distance="40px">
             <div className="contact-heading-div">
               <div className="contact-heading-img-div">
                 <img
+                  style={{
+                    width: "300px",
+                    height: "300px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
                   src={require(`../../assets/images/${ContactData["profile_image_path"]}`)}
-                  alt=""
+                  alt="Jose Contreras"
                 />
               </div>
               <div className="contact-heading-text-div">
@@ -44,54 +51,43 @@ class Contact extends Component {
                   {ContactData["description"]}
                 </p>
                 <SocialMedia theme={theme} />
-                <div className="resume-btn-div">
+                <div
+                  className="resume-btn-div"
+                  style={{ display: "flex", gap: "10px" }}
+                >
+                  {/* CV BUTTON */}
                   <Button
                     text="See My Resume"
                     newTab={true}
                     href={greeting.resumeLink}
                     theme={theme}
+                    onClick={() =>
+                      trackOutboundClick("CV Resume", greeting.resumeLink)
+                    }
                   />
-                </div>
-              </div>
-            </div>
-          </Fade>
-          <Fade bottom duration={1000} distance="40px">
-            <div className="blog-heading-div">
-              <div className="blog-heading-text-div">
-                <h1 className="blog-heading-text" style={{ color: theme.text }}>
-                  {blogSection["title"]}
-                </h1>
-                <p
-                  className="blog-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
-                  {blogSection["subtitle"]}
-                </p>
-                <div className="blogsite-btn-div">
+
+                  {/* EMAIL ME BUTTON */}
                   <Button
-                    text="Visit My Blogsite"
-                    newTab={true}
-                    href={blogSection.link}
+                    text="Email Me"
+                    newTab={false}
+                    href="mailto:joseiraggio@gmail.com?subject=Contact%20from%20your%20portfolio%20website"
                     theme={theme}
+                    onClick={() =>
+                      trackOutboundClick(
+                        "Email Me",
+                        "mailto:joseiraggio@gmail.com"
+                      )
+                    }
                   />
                 </div>
               </div>
-              <div className="blog-heading-img-div">
-                {/* <img
-											src={require(`../../assets/images/${blogSection["avatar_image_path"]}`)}
-											alt=""
-										/> */}
-                <BlogsImg theme={theme} />
-              </div>
             </div>
           </Fade>
+
+          {/* === ADDRESS / PHONE === */}
           <Fade bottom duration={1000} distance="40px">
             <div className="address-heading-div">
               <div className="contact-heading-img-div">
-                {/* <img
-											src={require(`../../assets/images/${addressSection["avatar_image_path"]}`)}
-											alt=""
-										/> */}
                 <AddressImg theme={theme} />
               </div>
               <div className="address-heading-text-div">
@@ -130,7 +126,38 @@ class Contact extends Component {
               </div>
             </div>
           </Fade>
+
+          {/* === GOOGLE CALENDAR APPOINTMENT SCHEDULING === */}
+          <Fade bottom duration={1000} distance="40px">
+            <div className="calendar-heading-div">
+              <h1
+                className="address-heading-text"
+                style={{ color: theme.text, textAlign: "center" }}
+              >
+                Schedule a Meeting
+              </h1>
+              <p
+                className="contact-header-detail-text subTitle"
+                style={{
+                  color: theme.secondaryText,
+                  textAlign: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                Pick a time that works best for you directly in my calendar.
+              </p>
+              <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3JTdHiG5L4tiKRhEv0-KxoYz6A8Ozk_VXvYvqrf7dRCKLir4vtoLJrYzNOHtKj6BQyvag2gRyM?gv=true"
+                style={{ border: 0 }}
+                width="100%"
+                height="1000px"
+                frameBorder="0"
+                title="Book an appointment with José"
+              />
+            </div>
+          </Fade>
         </div>
+
         <Footer theme={this.props.theme} onToggle={this.props.onToggle} />
         <TopButton theme={this.props.theme} />
       </div>

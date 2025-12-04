@@ -50,6 +50,13 @@
   font-family: "Google Sans Medium";
 }
 
+.button-greeting-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* <--- space between buttons */
+  margin-top: 20px;
+}
+
 .greeting-image-div > * {
   max-width: 100%;
   height: auto;

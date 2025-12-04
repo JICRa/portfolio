@@ -1,13 +1,75 @@
 .experience-accord {
-  margin: 50px;
+  max-width: 70%;
+  margin: 50px auto;
 }
 
-.accord-panel {
-  font-family: "Google Sans Regular";
+.timeline {
+  position: relative;
+  padding: 40px 0 20px 0; /* extra top space for the Present pill */
 }
 
+/* Vertical line down the middle */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 20px; /* start a bit below the Present pill */
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: var(--timeline-line-color, #e0e0e0);
+}
+
+/* "Present" label sitting on top of the timeline */
+.timeline-present-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Bigger pill */
+  padding: 12px 26px; /* more padding = larger circle */
+  border-radius: 999px; /* keeps it fully rounded */
+
+  /* Bigger typography */
+  font-size: 32px; /* large clean heading */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  /* Colors from theme */
+  background-color: var(--timeline-label-bg, #ffffff);
+  color: var(--timeline-label-text, #222222);
+
+  /* More presence */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  border: 2px solid rgba(0, 0, 0, 0.08); /* subtle outline */
+}
+
+/* Volunteering section under the main timeline */
+.experience-volunteering {
+  margin-top: 60px;
+}
+
+.experience-volunteering-title {
+  font-family: "Google Sans Medium";
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.experience-volunteering-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .experience-accord {
+    max-width: 100%;
     margin: 20px;
+  }
+
+  .timeline::before {
+    left: 16px;
   }
 }

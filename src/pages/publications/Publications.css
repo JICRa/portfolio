@@ -1,0 +1,124 @@
+.publications-main {
+  width: 100%;
+  text-align: center;
+}
+
+.basic-publications {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* Hero section */
+.publications-heading-div {
+  display: flex;
+}
+
+.publications-heading-div > * {
+  flex: 1;
+}
+
+.publications-heading-img-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publications-heading-text-div {
+  text-align: center;
+}
+
+.publications-heading-img-div > * {
+  max-width: 100%;
+  height: auto;
+}
+
+.publications-heading-text {
+  font-size: 56px;
+  font-weight: 600;
+  font-family: "Google Sans Medium";
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.publications-heading-sub-text {
+  font-size: 30px;
+  font-family: "Google Sans Regular";
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.publications-header-detail-text {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Google Sans Medium";
+}
+
+.publications-cards-div-main {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center; /* center each card */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 960px; /* ~2/3 of a 1440px screen */
+  margin: 40px auto 0; /* center horizontally */
+  padding: 0 20px;
+}
+
+/* Optional: style individual cards to not be too huge */
+.publication-card {
+  width: 100%;
+  border-radius: 10px;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+/* Clamp description to ~3 lines visually */
+.publication-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .publications-cards-div-main {
+    max-width: 100%;
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .publications-heading-text {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .publications-heading-sub-text {
+    font-size: 20px;
+  }
+
+  .publications-heading-div {
+    flex-direction: column;
+  }
+
+  .publications-header-detail-text {
+    font-size: 16px;
+    margin-right: 0px;
+    margin-left: 0px;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .publications-cards-div-main {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+  }
+}

@@ -3,60 +3,132 @@ import "./PublicationCard.css";
 import { Fade } from "react-reveal";
 
 export default function PublicationCard({ pub, theme }) {
-  function openPubinNewTab(url) {
-    var win = window.open(url, "_blank");
-    win.focus();
+  const {
+    title,
+    name,
+    description,
+    url,
+    journal,
+    year,
+    isFirstAuthor,
+    type,
+    bullets,
+  } = pub;
+
+  const displayTitle = title || name || "Untitled publication";
+  const displayDescription = description || "";
+  const displayYear = year || "";
+  const displayType = type || "Journal article";
+
+  const authorLine =
+    isFirstAuthor === false
+      ? "José I. Contreras Raggio · et al. (not first author)"
+      : "José I. Contreras Raggio · et al.";
+
+  const hasBullets = Array.isArray(bullets) && bullets.length > 0;
+
+  function openPublication() {
+    if (!url) return;
+    const win = window.open(url, "_blank");
+    if (win) win.focus();
   }
 
   return (
     <div
       className="publication-card-div"
+      onClick={openPublication}
       style={{ backgroundColor: theme.highlight }}
     >
-      <Fade bottom duration={2000} distance="40px">
-        <div key={pub.id} onClick={() => openPubinNewTab(pub.url)}>
-          <div className="publication-name-div">
-            <p className="publication-name" style={{ color: theme.text }}>
-              {pub.name}
-            </p>
-          </div>
-          <p className="publication-description" style={{ color: theme.text }}>
-            {pub.description}
+      <Fade bottom duration={600} distance="12px">
+        <div className="publication-card-inner">
+          {/* Title */}
+          <p className="publication-title" style={{ color: theme.text }}>
+            {displayTitle}
           </p>
-          <div className="publication-details">
-            <p
-              className="publication-creation-date subTitle"
-              style={{ color: theme.secondaryText }}
-            >
-              Published on {pub.createdAt.split("T")[0]}
-            </p>
+
+          {/* Meta row: type badge + journal + year */}
+          <div className="publication-meta-row">
+            {displayType && (
+              <span
+                className="publication-type-badge"
+                style={{
+                  borderColor: theme.secondaryText,
+                  backgroundColor: theme.secondaryText,
+                  color: theme.body,
+                }}
+              >
+                {displayType}
+              </span>
+            )}
+            {journal && (
+              <span
+                className="publication-meta-text"
+                style={{ color: theme.text }}
+              >
+                {journal}
+              </span>
+            )}
+            {displayYear && (
+              <>
+                <span
+                  className="publication-meta-separator"
+                  style={{ color: theme.text }}
+                >
+                  ·
+                </span>
+                <span
+                  className="publication-meta-text"
+                  style={{ color: theme.text }}
+                >
+                  {displayYear}
+                </span>
+              </>
+            )}
           </div>
-          {/* <div className="repo-stats">
-          <div className="repo-left-stat">
-            <span>
-              <div className="language-color" style={{ backgroundColor: repo.node.primaryLanguage.color }}></div>
-              <p>{repo.node.primaryLanguage.name}</p>
-            </span>
-            <span>
-              <svg aria-hidden="true" className="octicon" height="16" role="img" viewBox="0 0 10 16" width="10" fill="rgb(106, 115, 125)" className="repo-star-svg">
-                <path
-                  fill-rule="evenodd"
-                  d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"
-                ></path>
-              </svg>
-              <p>{repo.node.forkCount}</p>
-            </span>
-            <span>
-              <svg aria-hidden="true" className="octicon" height="16" role="img" viewBox="0 0 14 16" width="14" fill="rgb(106, 115, 125)" className="repo-star-svg">
-                <path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
-              </svg>
-              <p>{repo.node.stargazers.totalCount}</p>
-            </span>
-          </div>
-          <div className="repo-right-stat">
-            <p>{repo.node.diskUsage} KB</p>
-          </div>
-        </div> */}
+
+          {/* Authors */}
+          <p className="publication-authors" style={{ color: theme.text }}>
+            {authorLine}
+          </p>
+
+          {/* Description as bullet list (preferred) or fallback paragraph */}
+          {hasBullets ? (
+            <ul className="publication-bullets" style={{ color: theme.text }}>
+              {bullets.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            displayDescription && (
+              <p
+                className="publication-description"
+                style={{ color: theme.text }}
+              >
+                {displayDescription}
+              </p>
+            )
+          )}
+
+          {/* View button */}
+          {url && (
+            <div className="publication-view-wrapper">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="publication-view-button"
+                style={{
+                  backgroundColor: theme.text,
+                  color: theme.body,
+                  borderColor: theme.text,
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <span>View</span>
+                <span className="publication-view-arrow">↗</span>
+              </a>
+            </div>
+          )}
         </div>
       </Fade>
     </div>

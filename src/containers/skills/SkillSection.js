@@ -24,40 +24,55 @@ class SkillSection extends Component {
     return (
       <div>
         {skills.data.map((skill, i) => {
+          const isEven = i % 2 === 0; // 0,2,4... → image left, text right
+
           return (
-            <div key={i} className="skills-main-div">
-              <Fade left duration={2000}>
+            <div
+              key={i}
+              className={`skills-main-div ${!isEven ? "reverse-skill" : ""}`}
+            >
+              {/* Image side */}
+              <Fade
+                duration={2000}
+                {...(isEven ? { left: true } : { right: true })}
+              >
                 <div className="skills-image-div">
-                  {/* <img
-                    alt="Ashutosh is Analysing Data"
-                    src={require(`../../assets/images/${skill.imagePath}`)}
-                  ></img> */}
                   <GetSkillSvg fileName={skill.fileName} theme={theme} />
                 </div>
               </Fade>
 
+              {/* Text side */}
               <div className="skills-text-div">
-                <Fade right duration={1000}>
+                <Fade
+                  duration={1000}
+                  {...(isEven ? { right: true } : { left: true })}
+                >
                   <h1 className="skills-heading" style={{ color: theme.text }}>
                     {skill.title}
                   </h1>
                 </Fade>
-                <Fade right duration={1500}>
+
+                <Fade
+                  duration={1500}
+                  {...(isEven ? { right: true } : { left: true })}
+                >
                   <SoftwareSkill logos={skill.softwareSkills} />
                 </Fade>
-                <Fade right duration={2000}>
+
+                <Fade
+                  duration={2000}
+                  {...(isEven ? { right: true } : { left: true })}
+                >
                   <div>
-                    {skill.skills.map((skillSentence, i) => {
-                      return (
-                        <p
-                          key={i}
-                          className="subTitle skills-text"
-                          style={{ color: theme.secondaryText }}
-                        >
-                          {skillSentence}
-                        </p>
-                      );
-                    })}
+                    {skill.skills.map((skillSentence, idx) => (
+                      <p
+                        key={idx}
+                        className="subTitle skills-text"
+                        style={{ color: theme.secondaryText }}
+                      >
+                        {skillSentence}
+                      </p>
+                    ))}
                   </div>
                 </Fade>
               </div>
