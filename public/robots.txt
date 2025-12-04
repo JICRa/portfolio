@@ -1,2 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
+# Allow all search engines to crawl the site
 User-agent: *
+Allow: /
+
+# Point search engines to the sitemap
+Sitemap: https://jicra.github.io/sitemap.xml
