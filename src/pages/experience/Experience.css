@@ -112,13 +112,13 @@
 
 /* Left side label (bottom-to-top) */
 .left-label {
-  left: 32px;
+  left: -50px;
   transform: translateY(-50%) rotate(-90deg);
 }
 
 /* Right side label (bottom-to-top mirrored) */
 .right-label {
-  right: 32px;
+  right: 0px;
   transform: translateY(-50%) rotate(90deg);
 }
 
