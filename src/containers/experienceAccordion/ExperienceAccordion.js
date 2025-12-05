@@ -61,7 +61,7 @@ class ExperienceAccordion extends Component {
               className="experience-volunteering-title"
               style={{ color: theme.text }}
             >
-              Volunteering
+              Leadership & Volunteering
             </h2>
             <div className="experience-volunteering-list">
               {volunteering.map((experience, index) => (

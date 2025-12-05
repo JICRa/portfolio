@@ -56,9 +56,10 @@
   margin-top: 20px;
 }
 
-.greeting-image-div > * {
-  max-width: 100%;
-  height: auto;
+.greeting-image-div {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
 }
 
 /* Media Query */

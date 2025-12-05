@@ -4,7 +4,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import { greeting } from "../../portfolio";
 import { Fade } from "react-reveal";
-import FeelingProud from "./FeelingProud";
+//import FeelingProud from "./FeelingProud";
 
 export default function Greeting(props) {
   const theme = props.theme;
@@ -68,8 +68,21 @@ export default function Greeting(props) {
             </div>
           </div>
 
-          <div className="greeting-image-div">
+          {/*<div className="greeting-image-div">
             <FeelingProud theme={theme} />
+          </div>*/}
+
+          <div className="greeting-image-div">
+            <img
+              src={require("../../assets/images/Scientists-12.jpg")}
+              alt="Jose Contreras"
+              style={{
+                width: "100%",
+                maxWidth: "800px",
+                borderRadius: "20px", // or "50%" for circular
+                objectFit: "cover",
+              }}
+            />
           </div>
         </div>
       </div>
