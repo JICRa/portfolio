@@ -579,7 +579,7 @@ const experience = {
           company: "Universidad Adolfo Ibáñez",
           department: "Student Gaming & Community Organization",
           company_url: "",
-          logo_path: "lol-uai.jpeg", // Add logo if available
+          logo_path: "lol-uai.jpeg",
           duration: "2015 – 2018",
           location: "Santiago, Chile",
           country: "chile",
@@ -614,7 +614,7 @@ const experience = {
           company: "Ankama Games",
           department: "Gaming Community & Events",
           company_url: "https://www.ankama.com/",
-          logo_path: "ankama.png", // Add icon if you want
+          logo_path: "ankama.png",
           duration: "2012 – 2015",
           location: "Santiago, Chile",
           country: "chile",
