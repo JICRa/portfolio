@@ -6,8 +6,8 @@
 
 Modifications were implemented to ensure alignment with an academic profile.
 
-Demo: https://jicra.github.io/
-Build repository: https://github.com/JICRa/JICRa.github.io
+-Demo: https://jicra.github.io/
+-Build repository: https://github.com/JICRa/JICRa.github.io
 
 # Technologies used 🛠️
 
