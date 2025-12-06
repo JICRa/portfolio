@@ -4,6 +4,11 @@
 <h3 align="center"> Original from Ashutosh1919 </h3> 
 <h4 align="center"> https://github.com/ashutosh1919/masterPortfolio </h4>
 
+Modifications were implemented to ensure alignment with an academic profile.
+
+Demo: https://jicra.github.io/
+Build repository: https://github.com/JICRa/JICRa.github.io
+
 # Technologies used 🛠️
 
 - [React](https://reactjs.org/)
