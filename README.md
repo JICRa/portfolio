@@ -4,10 +4,16 @@
 <h3 align="center"> Original from Ashutosh1919 </h3> 
 <h4 align="center"> https://github.com/ashutosh1919/masterPortfolio </h4>
 
-Modifications were implemented to ensure alignment with an academic profile.
+This repository is a customized version of the original Master Portfolio template, adapted to better reflect an academic and research-oriented profile.
+Modifications focus on content structure, presentation, and clarity while preserving the core design philosophy of the original project.
 
--Demo: https://jicra.github.io/
--Build repository: https://github.com/JICRa/JICRa.github.io
+🔗 Live Demo
+
+Portfolio: https://jicra.github.io/
+
+🏗 Build Repository
+
+Source & Build: https://github.com/JICRa/JICRa.github.io
 
 # Technologies used 🛠️
 
@@ -30,3 +36,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 
 - Original Design and Implementation Ideas are taken from [Ashutosh Design's Portfolio Project](https://github.com/ashutosh1919/masterPortfolio).
 - Some Design and Implementation Ideas are taken from [Saad Pasta's Portfolio Project](https://github.com/saadpasta/developerFolio).
+
+This portfolio is intended to showcase research, engineering projects, publications, and data-driven work in a clear and professional manner.
