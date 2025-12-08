@@ -4,7 +4,8 @@ import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import AddressImg from "./AddressImg";
+// ❌ removed AddressImg import
+// import AddressImg from "./AddressImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
 import { greeting, contactPageData } from "../../portfolio.js";
@@ -84,25 +85,11 @@ class Contact extends Component {
             </div>
           </Fade>
 
-          {/* === ADDRESS / PHONE === */}
+          {/* === ADDRESS / PHONE (SIDE BY SIDE) === */}
           <Fade bottom duration={1000} distance="40px">
             <div className="address-heading-div">
-              <div className="contact-heading-img-div">
-                <AddressImg theme={theme} />
-              </div>
-              <div className="address-heading-text-div">
-                <h1
-                  className="address-heading-text"
-                  style={{ color: theme.text }}
-                >
-                  {addressSection["title"]}
-                </h1>
-                <p
-                  className="contact-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
-                  {addressSection["subtitle"]}
-                </p>
+              {/* left: PHONE */}
+              <div className="address-column">
                 <h1
                   className="address-heading-text"
                   style={{ color: theme.text }}
@@ -114,6 +101,22 @@ class Contact extends Component {
                   style={{ color: theme.secondaryText }}
                 >
                   {phoneSection["subtitle"]}
+                </p>
+              </div>
+
+              {/* right: ADDRESS */}
+              <div className="address-column">
+                <h1
+                  className="address-heading-text"
+                  style={{ color: theme.text }}
+                >
+                  {addressSection["title"]}
+                </h1>
+                <p
+                  className="contact-header-detail-text subTitle"
+                  style={{ color: theme.secondaryText }}
+                >
+                  {addressSection["subtitle"]}
                 </p>
                 <div className="address-btn-div">
                   <Button

@@ -18,6 +18,7 @@
 .address-heading-div {
   display: flex;
   margin-top: 80px;
+  gap: 40px; /* space between address and phone */
 }
 
 .blog-heading-div > * {
@@ -51,9 +52,21 @@
   text-align: center;
 }
 
+/* NEW: generic column style for address & phone */
+.address-column {
+  text-align: center;
+}
+
 .address-heading-text-div {
   text-align: center;
 }
+
+/* no longer used but harmless; you can delete if you want
+.contact-heading-img-div-two > * {
+  max-width: 70%;
+  height: auto;
+}
+*/
 
 .contact-heading-img-div > * {
   max-width: 100%;
