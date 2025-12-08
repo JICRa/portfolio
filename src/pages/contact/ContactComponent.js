@@ -29,8 +29,8 @@ class Contact extends Component {
                 <img
                   style={{
                     width: "300px",
-                    height: "300px",
-                    borderRadius: "50%",
+                    height: "400px",
+                    borderRadius: "10%",
                     objectFit: "cover",
                     display: "block",
                   }}
