@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Portfolio | José Ignacio Contreras Raggio",
     type: "website",
-    url: "https://jicra.github.io/",
+    url: "https://josecontreras.ch/",
   },
 };
 
@@ -24,7 +24,7 @@ const greeting = {
   nickname: "I Use Data to Solve Real-World Problems",
   subTitle:
     "Data-driven bioengineer and PhD candidate. I work across the biomedical and engineering sectors, using ML/AI, image analysis and modeling to solve problems, improve processes and extract actionable insights from complex data.",
-  resumeLink: "https://jicra.github.io/cv.pdf",
+  resumeLink: "https://josecontreras.ch/cv.pdf",
   portfolio_repository: "https://github.com/JICRa/JICRa.github.io",
   githubProfile: "https://github.com/JICRa",
 };

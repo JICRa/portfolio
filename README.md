@@ -9,7 +9,7 @@ Modifications focus on content structure, presentation, and clarity while preser
 
 🔗 Live Demo
 
-Portfolio: https://jicra.github.io/
+Portfolio: https://josecontreras.ch/ or https://jicra.github.io/
 
 🏗 Build Repository
 
