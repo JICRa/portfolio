@@ -283,9 +283,10 @@ const certifications = {
   certifications: [
     {
       title: "Top 100 Young Leaders in Chile",
-      subtitle: "Recognized among Chile’s Top 100 Young Leaders",
+      subtitle: "Recognized among Chile’s Top 100 Young Leaders 2023",
       logo_path: "uai_v2.PNG",
-      certificate_link: "",
+      certificate_link:
+        "https://sociologia.uc.cl/wp-content/uploads/2023/07/lideres-2023-1.pdf",
       alt_name: "Top 100 Young Leaders",
       color_code: "white",
       duration: "2023",
@@ -296,7 +297,8 @@ const certifications = {
       subtitle:
         "LinkedIn Learning – Career Path Planning, Data Analytics, Tech Career Skills",
       logo_path: "linkedin.svg",
-      certificate_link: "",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/5158137020e9f3f366293227aa888c15dd4d35553704a0f4d1c6410e587e6185",
       alt_name: "LinkedIn Learning",
       color_code: "white",
       duration: "Nov 2025", // Extracted from certificate
@@ -305,7 +307,8 @@ const certifications = {
       title: "The Non-Technical Skills of Effective Data Scientists",
       subtitle: "LinkedIn Learning – Data Science Soft Skills",
       logo_path: "linkedin.svg",
-      certificate_link: "",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/e35c5e8aa648d8332eafe6c259b56eafab85ab80e7fc239bbc03ddb8c86bde7b",
       alt_name: "LinkedIn Learning",
       color_code: "white",
       duration: "Nov 2025",
@@ -314,7 +317,8 @@ const certifications = {
       title: "A Day in the Life of a Data Scientist",
       subtitle: "LinkedIn Learning – Career Management & Tech Career Skills",
       logo_path: "linkedin.svg",
-      certificate_link: "",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/d263f74fa437b53848bba3b954908687af3df8e2f58dbc21aabb86f377c27a5c",
       alt_name: "LinkedIn Learning",
       color_code: "white",
       duration: "Nov 2025",
@@ -507,7 +511,7 @@ const experience = {
           department: "Software Development",
           company_url: "https://www.sonda.com/",
           logo_path: "sonda.png",
-          duration: "Nov 2016 – Mar 2017",
+          duration: "Oct 2016 – Mar 2017",
           location: "Santiago, Chile",
           country: "chile",
           description: [
@@ -524,12 +528,12 @@ const experience = {
           department: "Software Development",
           company_url: "https://www.sonda.com/",
           logo_path: "sonda.png",
-          duration: "Jun 2016 – Sept 2016",
+          duration: "Jun 2016 – Sep 2016",
           location: "Santiago, Chile",
           country: "chile",
           description: [
             "Contributed to full-stack development using Laravel and Vue.js for internal web applications.",
-            "Delivered high-quality features on a tight timeline, leading to promotion to Senior Developer in only 3 months (vs. typical 1.5 years).",
+            "Delivered high-quality features on a tight timeline, leading to promotion to Senior Developer in only 4 months (vs. typical 1.5 years).",
           ],
           color: "#FF6F00",
         },

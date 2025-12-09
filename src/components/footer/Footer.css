@@ -1,10 +1,163 @@
-.footer-text {
-  text-align: center;
-  /* color: #868e96; */
-  font-weight: bold;
-  font-family: "Google Sans Regular";
+.footer-root {
+  border-top: 1px solid #e5e7eb; /* light gray divider */
+  background-color: #f9fafb; /* subtle off-white */
+  padding: 2.5rem 1.5rem;
+  font-family: inherit;
 }
 
-.footer-div {
-  margin-top: 2rem;
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* ---------------------------------
+   LEFT: Brand / profile
+---------------------------------- */
+
+.footer-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 220px;
+}
+
+.footer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: #111827; /* dark slate */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-brand-text {
+  max-width: 340px;
+}
+
+.footer-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.footer-role {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280; /* gray-500 */
+  line-height: 1.35;
+}
+
+/* Availability status */
+
+.footer-status {
+  margin-top: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+}
+
+/* Call-to-action button */
+
+.footer-cta {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #111827; /* dark slate */
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.footer-cta:hover {
+  background-color: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------
+   MIDDLE + RIGHT: Columns
+---------------------------------- */
+
+.footer-column {
+  min-width: 160px;
+}
+
+.footer-heading {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+/* Links */
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.35rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: #111827;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Social icons */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ---------------------------------
+   BOTTOM: Copyright
+---------------------------------- */
+
+.footer-bottom {
+  max-width: 1120px;
+  margin: 1.75rem auto 0 auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* ---------------------------------
+   Responsive
+---------------------------------- */
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    text-align: left;
+  }
 }

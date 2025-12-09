@@ -153,7 +153,7 @@ class Contact extends Component {
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3JTdHiG5L4tiKRhEv0-KxoYz6A8Ozk_VXvYvqrf7dRCKLir4vtoLJrYzNOHtKj6BQyvag2gRyM?gv=true"
                 style={{ border: 0 }}
                 width="100%"
-                height="1000px"
+                height="1050"
                 frameBorder="0"
                 title="Book an appointment with José"
               />
