@@ -323,6 +323,16 @@ const certifications = {
       color_code: "white",
       duration: "Nov 2025",
     },
+    {
+      title: "Data Science Foundations: Fundamentals",
+      subtitle: "LinkedIn Learning – Data Analytics & Data Science Foundations",
+      logo_path: "linkedin.svg",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/5158137020e9f3f366293227aa888c15dd4d35553704a0f4d1c6410e587e6185",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "5h 24m", // Extracted from certificate
+    },
   ],
 };
 
