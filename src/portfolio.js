@@ -292,36 +292,24 @@ const certifications = {
       duration: "2023",
     },
     {
-      title:
-        "Data Science and Analytics Career Paths and Certifications: First Steps",
-      subtitle:
-        "LinkedIn Learning – Career Path Planning, Data Analytics, Tech Career Skills",
+      title: "Statistics Foundations 2: Probability",
+      subtitle: "LinkedIn Learning – Probability Foundations",
       logo_path: "linkedin.svg",
       certificate_link:
-        "https://www.linkedin.com/learning/certificates/5158137020e9f3f366293227aa888c15dd4d35553704a0f4d1c6410e587e6185",
+        "https://www.linkedin.com/learning/certificates/90aa4fd1a4b74758c652af5b766472d9af12d7f87765dc2828205aed94f1ea6d",
       alt_name: "LinkedIn Learning",
       color_code: "white",
-      duration: "Nov 2025", // Extracted from certificate
+      duration: "1h 15m",
     },
     {
-      title: "The Non-Technical Skills of Effective Data Scientists",
-      subtitle: "LinkedIn Learning – Data Science Soft Skills",
+      title: "Statistics Foundations 1: The Basics",
+      subtitle: "LinkedIn Learning – Statistics Foundations",
       logo_path: "linkedin.svg",
       certificate_link:
-        "https://www.linkedin.com/learning/certificates/e35c5e8aa648d8332eafe6c259b56eafab85ab80e7fc239bbc03ddb8c86bde7b",
+        "https://www.linkedin.com/learning/certificates/9a8b7f95c788881533172b4d8522c0449a0bda267b75abb0c85d532b7b67f78e",
       alt_name: "LinkedIn Learning",
       color_code: "white",
-      duration: "Nov 2025",
-    },
-    {
-      title: "A Day in the Life of a Data Scientist",
-      subtitle: "LinkedIn Learning – Career Management & Tech Career Skills",
-      logo_path: "linkedin.svg",
-      certificate_link:
-        "https://www.linkedin.com/learning/certificates/d263f74fa437b53848bba3b954908687af3df8e2f58dbc21aabb86f377c27a5c",
-      alt_name: "LinkedIn Learning",
-      color_code: "white",
-      duration: "Nov 2025",
+      duration: "36m",
     },
     {
       title: "Data Science Foundations: Fundamentals",
@@ -331,7 +319,39 @@ const certifications = {
         "https://www.linkedin.com/learning/certificates/5158137020e9f3f366293227aa888c15dd4d35553704a0f4d1c6410e587e6185",
       alt_name: "LinkedIn Learning",
       color_code: "white",
-      duration: "5h 24m", // Extracted from certificate
+      duration: "5h 24m",
+    },
+    {
+      title:
+        "Data Science and Analytics Career Paths and Certifications: First Steps",
+      subtitle:
+        "LinkedIn Learning – Career Path Planning, Data Analytics, Tech Career Skills",
+      logo_path: "linkedin.svg",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/5158137020e9f3f366293227aa888c15dd4d35553704a0f4d1c6410e587e6185",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "1h 32m",
+    },
+    {
+      title: "The Non-Technical Skills of Effective Data Scientists",
+      subtitle: "LinkedIn Learning – Data Science Soft Skills",
+      logo_path: "linkedin.svg",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/e35c5e8aa648d8332eafe6c259b56eafab85ab80e7fc239bbc03ddb8c86bde7b",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "50m",
+    },
+    {
+      title: "A Day in the Life of a Data Scientist",
+      subtitle: "LinkedIn Learning – Career Management & Tech Career Skills",
+      logo_path: "linkedin.svg",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/d263f74fa437b53848bba3b954908687af3df8e2f58dbc21aabb86f377c27a5c",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "1h 3m",
     },
   ],
 };

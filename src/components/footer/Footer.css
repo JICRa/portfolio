@@ -3,6 +3,7 @@
   background-color: #f9fafb; /* subtle off-white */
   padding: 2.5rem 1.5rem;
   font-family: inherit;
+  text-align: left;
 }
 
 .footer-inner {
