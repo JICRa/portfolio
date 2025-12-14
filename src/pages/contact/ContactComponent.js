@@ -63,7 +63,10 @@ class Contact extends Component {
                     href={greeting.resumeLink}
                     theme={theme}
                     onClick={() =>
-                      trackOutboundClick("CV Resume", greeting.resumeLink)
+                      trackOutboundClick({
+                        label: "CV PDF",
+                        url: greeting.resumeLink,
+                      })
                     }
                   />
 
@@ -74,10 +77,10 @@ class Contact extends Component {
                     href="mailto:joseiraggio@gmail.com?subject=Contact%20from%20your%20portfolio%20website"
                     theme={theme}
                     onClick={() =>
-                      trackOutboundClick(
-                        "Email Me",
-                        "mailto:joseiraggio@gmail.com"
-                      )
+                      trackOutboundClick({
+                        label: "Email",
+                        url: "mailto:joseiraggio@gmail.com",
+                      })
                     }
                   />
                 </div>

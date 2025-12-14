@@ -1,24 +1,32 @@
 // src/utils/analytics.js
 
-export function trackPageView(path) {
+export function trackPageView({ path, title }) {
   if (typeof window === "undefined") return;
   if (!window.gtag) return;
 
   window.gtag("event", "page_view", {
-    page_title: document.title,
-    page_location: window.location.href,
     page_path: path,
+    page_title: title,
+    screen_name: title,
   });
 }
 
-// src/utils/analytics.js
-export function trackOutboundClick(label, url) {
+export function trackOutboundClick({ label, url }) {
   if (typeof window === "undefined") return;
   if (!window.gtag) return;
 
-  window.gtag("event", "outbound_click", {
-    event_category: "engagement",
-    event_label: label, // e.g. "CV Resume"
-    destination: url,
+  let domain = "";
+  try {
+    domain = new URL(url).hostname;
+  } catch (e) {
+    // handles mailto:, tel:, or malformed URL
+    domain = "";
+  }
+
+  window.gtag("event", "click", {
+    link_text: label,
+    link_url: url,
+    link_domain: domain,
+    outbound: true,
   });
 }

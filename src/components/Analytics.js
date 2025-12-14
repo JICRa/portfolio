@@ -3,15 +3,26 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { trackPageView } from "../utils/analytics";
 
-function Analytics() {
+// Map routes to clean names (edit as needed)
+const PAGE_TITLES = {
+  "/": "Home",
+  "/education": "Education",
+  "/experience": "Experience",
+  "/publications": "Publications",
+  "/projects": "Projects",
+  "/contact": "Contact",
+};
+
+export default function Analytics() {
   const location = useLocation();
 
   useEffect(() => {
-    // Each time the route changes, send a page_view
-    trackPageView(location.pathname + location.search);
-  }, [location]);
+    const path = location.pathname;
+    const title = PAGE_TITLES[path] || "Portfolio";
 
-  return null; // This component doesn’t render anything
+    document.title = `${title} | José Contreras`;
+    trackPageView({ path, title });
+  }, [location.pathname]);
+
+  return null;
 }
-
-export default Analytics;
