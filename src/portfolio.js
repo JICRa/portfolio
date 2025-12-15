@@ -292,6 +292,16 @@ const certifications = {
       duration: "2023",
     },
     {
+      title: "Data Visualization: Storytelling",
+      subtitle: "LinkedIn Learning – Storytelling with Data",
+      logo_path: "linkedin.svg",
+      certificate_link:
+        "https://www.linkedin.com/learning/certificates/882920970262f5308665e6d6e3760610ff1445864f453d8706c0d9217bad761e?trk=share_certificate",
+      alt_name: "LinkedIn Learning",
+      color_code: "white",
+      duration: "1h 32m",
+    },
+    {
       title: "Statistics Foundations 2: Probability",
       subtitle: "LinkedIn Learning – Probability Foundations",
       logo_path: "linkedin.svg",
