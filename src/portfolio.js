@@ -231,7 +231,7 @@ const degrees = {
       subtitle: "PhD in Complex Systems Engineering (candidate)",
       logo_path: "logo-uai-v2.png",
       alt_name: "UAI & Empa / ETH Zürich",
-      duration: "Apr 2022 – May 2026 (expected)",
+      duration: "Apr 2022 – Jan 2026 (expected)",
       descriptions: [
         'Thesis: "Investigating the mechanical and biological properties of seeded 3D-Bioplotted Composite Scaffolds in an in-vitro dynamic bone culture model."',
         "Multidisciplinary research integrating complex systems, bioengineering and advanced manufacturing with a data-driven approach to materials and biomechanics.",
