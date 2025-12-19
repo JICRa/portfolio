@@ -155,7 +155,7 @@ const skills = {
       title: "Bioengineering: Fabrication, Biomechanics & Biology",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ Fabricating and characterizing 3D-printed scaffolds and composite biomaterials for tissue engineering.",
+        "⚡ Fabricating and characterizing 3D-printed scaffolds and composite biomaterials for bone tissue engineering.",
         "⚡ Skilled in chemical, mechanical and biological testing (rheology, SEM/EDS, FTIR, mechanical testing, cell assays).",
         "⚡ Using imaging (microCT, microscopy, point clouds) to link design → structure → function.",
         "⚡ Designing and operating dynamic bioreactor systems for perfusion and mechanical loading during in vitro testing.",
