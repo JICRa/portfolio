@@ -158,7 +158,7 @@ const skills = {
         "⚡ Fabricating and characterizing 3D-printed scaffolds and composite biomaterials for bone tissue engineering.",
         "⚡ Skilled in chemical, mechanical and biological testing (rheology, SEM/EDS, FTIR, mechanical testing, cell assays).",
         "⚡ Using imaging (microCT, microscopy, point clouds) to link design → structure → function.",
-        "⚡ Designing and operating dynamic bioreactor systems for perfusion and mechanical loading during in vitro testing.",
+        "⚡ Designing and operating dynamic bioreactor systems for perfusion and mechanical loading during in vitro testing for bone tissue engineering.",
       ],
       softwareSkills: [
         {
@@ -195,7 +195,7 @@ const skills = {
       skills: [
         "⚡ Completing a PhD in Complex Systems Engineering at UAI–Empa/ETH Zürich (data, imaging, biomechanics, materials).",
         "⚡ Author/co-author of 10 peer-reviewed publications across materials, biomechanics and computational methods.",
-        "⚡ Mentored 8+ Master’s students and collaborated with interdisciplinary and international teams.",
+        "⚡ Mentored 11 Master’s students and collaborated with interdisciplinary and international teams.",
         "⚡ Strong autonomy, adaptability and ownership, delivering reliable results with an industry-oriented mindset.",
       ],
       softwareSkills: [
