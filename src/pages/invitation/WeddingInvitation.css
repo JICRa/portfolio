@@ -1,148 +1,179 @@
-/* src/pages/invitation/WeddingInvitation.css */
+/* =========================================================
+   FULL WEDDING PAGE
+   ========================================================= */
 
 .wedding-page {
-  min-height: 100vh;
-  width: 100%;
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: #f5f1e9;
+
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  box-sizing: border-box;
-
-  padding: 40px 20px 60px;
-
-  /*
-   * Intentionally independent of the portfolio theme.
-   * The wedding invitation behaves as its own microsite.
-   */
-  background: #f5f1e9;
-
-  overflow: hidden;
 }
 
+/* =========================================================
+   STAGE
+
+   Card + text are one unit now.
+   ========================================================= */
+
 .invitation-stage {
-  width: 100%;
+  position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  /*
+   * Shift the whole object slightly left so the
+   * invitation has room to rotate clockwise.
+   */
+  transform: translateX(-6vw);
 }
 
-/*
- * Stack dimensions.
- *
- * Change max-width to make the physical invitation
- * appear larger or smaller on desktop.
- */
+/* =========================================================
+   STACK
+   ========================================================= */
+
 .invitation-stack {
   position: relative;
 
-  width: min(78vw, 560px);
-
   /*
-   * This aspect ratio should approximately match
-   * your actual invitation image ratio.
+   * Your PNGs are 1000 x 1000.
    *
-   * Example:
-   * 4 / 5 = portrait invitation.
+   * Therefore the container MUST be square.
    */
-  aspect-ratio: 4 / 5;
+  width: min(68vw, 650px);
 
-  /*
-   * Extra room is important because rotated cards
-   * extend outside their original rectangle.
-   */
-  margin: 40px 80px 80px 20px;
+  aspect-ratio: 1 / 1;
 }
 
-/*
- * Every invitation is physically stacked
- * in exactly the same position.
- */
+/* =========================================================
+   INVITATION
+   ========================================================= */
+
 .invitation-card {
   position: absolute;
 
-  left: 0;
   top: 0;
+  left: 0;
 
   width: 100%;
   height: 100%;
 
-  background: white;
+  /*
+   * No artificial white card behind the PNG anymore.
+   */
+  background: transparent;
 
   /*
-   * Our virtual physical pin is 30px from
-   * the top-left corner.
+   * Pin center = 28px / 28px.
    */
-  transform-origin: 30px 30px;
+  transform-origin: 28px 28px;
 
-  border-radius: 3px;
+  overflow: hidden;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 35px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
 
-  /*
-   * Very important for mobile:
-   * touching the invitation moves the card instead
-   * of scrolling/zooming the browser.
-   */
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14), 0 18px 42px rgba(0, 0, 0, 0.13);
+
   touch-action: none;
 
   user-select: none;
   -webkit-user-select: none;
 
-  cursor: default;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms ease;
 
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 300ms ease;
+  will-change: transform;
 }
 
+/*
+ * The PNG completely defines the physical card.
+ *
+ * No object-fit: contain → therefore NO white
+ * letterboxing at the top and bottom.
+ */
 .invitation-card img {
   display: block;
 
   width: 100%;
   height: 100%;
 
-  object-fit: contain;
+  object-fit: cover;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
 
   pointer-events: none;
 
   user-select: none;
+  -webkit-user-select: none;
   -webkit-user-drag: none;
 }
+
+/* =========================================================
+   ACTIVE
+   ========================================================= */
 
 .invitation-card-active {
   cursor: grab;
 }
 
+.invitation-card-active:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16), 0 24px 48px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================================================
+   DRAGGING
+   ========================================================= */
+
 .invitation-card-dragging {
   cursor: grabbing;
 
   /*
-   * Remove animation while finger/mouse is moving.
-   * Otherwise the card feels delayed.
+   * While dragging there must be NO interpolation.
+   * The card stays directly under your gesture.
    */
   transition: none;
 
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 28px 55px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18), 0 30px 65px rgba(0, 0, 0, 0.16);
 }
+
+/* =========================================================
+   OPEN CARD
+   ========================================================= */
 
 .invitation-card-open {
   cursor: pointer;
 }
 
-/* -------------------------
+/* =========================================================
    PIN
-   ------------------------- */
+   ========================================================= */
 
 .invitation-pin {
   position: absolute;
 
   /*
-   * Pin center = 30px, 30px.
+   * Center = 28px / 28px
    */
-  left: 19px;
-  top: 19px;
+  left: 17px;
+  top: 17px;
 
   width: 22px;
   height: 22px;
@@ -153,14 +184,14 @@
 
   background: radial-gradient(
     circle at 35% 30%,
-    #fff4bd 0%,
-    #d7ad50 30%,
-    #9b6d22 68%,
-    #68440e 100%
+    #fff8ce 0%,
+    #d9b252 28%,
+    #a17325 65%,
+    #69440d 100%
   );
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
-    inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.85);
 
   pointer-events: none;
 }
@@ -176,24 +207,32 @@
 
   border-radius: 50%;
 
-  background: rgba(85, 55, 10, 0.45);
+  background: rgba(78, 49, 7, 0.45);
 }
 
-/* -------------------------
-   INSTRUCTIONS
-   ------------------------- */
+/* =========================================================
+   INFORMATION
+
+   Now directly beneath the physical invitation.
+   ========================================================= */
+
+.invitation-info {
+  margin-top: 18px;
+
+  text-align: center;
+
+  pointer-events: none;
+
+  user-select: none;
+}
 
 .invitation-help {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 
   font-size: 14px;
   letter-spacing: 0.02em;
 
   color: #777066;
-
-  text-align: center;
-
-  user-select: none;
 }
 
 .invitation-progress {
@@ -202,45 +241,85 @@
   font-size: 12px;
 
   color: #aaa197;
-
-  text-align: center;
-
-  user-select: none;
 }
 
-/* -------------------------
-   MOBILE
-   ------------------------- */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-@media (max-width: 768px) {
-  .wedding-page {
-    padding: 25px 10px 45px;
+@media (max-width: 900px) {
+  .invitation-stage {
+    transform: translateX(-7vw);
   }
 
   .invitation-stack {
-    width: min(82vw, 440px);
+    width: min(68vw, 570px);
+  }
+}
 
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .wedding-page {
+    align-items: center;
+  }
+
+  .invitation-stage {
     /*
-     * Leave room toward the right for the card
-     * when it rotates.
+     * Left positioning leaves room for the card
+     * to swing to the right.
      */
-    margin: 25px 50px 65px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .wedding-page {
-    padding-left: 5px;
-    padding-right: 5px;
+    transform: translateX(-8vw);
   }
 
   .invitation-stack {
-    width: 78vw;
+    width: 72vw;
+  }
 
-    margin: 20px 55px 55px 5px;
+  .invitation-card {
+    transform-origin: 22px 22px;
+  }
+
+  .invitation-pin {
+    left: 13px;
+    top: 13px;
+
+    width: 18px;
+    height: 18px;
+  }
+
+  .invitation-pin-center {
+    left: 6px;
+    top: 6px;
+
+    width: 6px;
+    height: 6px;
+  }
+
+  .invitation-info {
+    /*
+     * Keep instruction close to card.
+     */
+    margin-top: 14px;
   }
 
   .invitation-help {
     font-size: 13px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .invitation-stage {
+    transform: translateX(-9vw);
+  }
+
+  .invitation-stack {
+    width: 70vw;
   }
 }
