@@ -1,32 +1,36 @@
-// src/utils/analytics.js
+// src/components/Analytics.js
 
-export function trackPageView({ path, title }) {
-  if (typeof window === "undefined") return;
-  if (!window.gtag) return;
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { trackPageView } from "../utils/analytics";
 
-  window.gtag("event", "page_view", {
-    page_path: path,
-    page_title: title,
-    screen_name: title,
-  });
-}
+const PAGE_TITLES = {
+  "/": "Home",
+  "/home": "Home",
+  "/education": "Education",
+  "/experience": "Experience",
+  "/publications": "Publications",
+  "/projects": "Projects",
+  "/contact": "Contact",
 
-export function trackOutboundClick({ label, url }) {
-  if (typeof window === "undefined") return;
-  if (!window.gtag) return;
+  // Private/direct wedding page
+  "/invitation": "Wedding Invitation",
+};
 
-  let domain = "";
-  try {
-    domain = new URL(url).hostname;
-  } catch (e) {
-    // handles mailto:, tel:, or malformed URL
-    domain = "";
-  }
+export default function Analytics() {
+  const location = useLocation();
 
-  window.gtag("event", "click", {
-    link_text: label,
-    link_url: url,
-    link_domain: domain,
-    outbound: true,
-  });
+  useEffect(() => {
+    const path = location.pathname;
+    const title = PAGE_TITLES[path] || "Portfolio";
+
+    document.title = `${title} | José Contreras`;
+
+    trackPageView({
+      path,
+      title,
+    });
+  }, [location.pathname]);
+
+  return null;
 }
