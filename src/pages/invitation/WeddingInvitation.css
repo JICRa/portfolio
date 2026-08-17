@@ -1,5 +1,5 @@
 /* =========================================================
-   FULL WEDDING PAGE
+   WEDDING INVITATION PAGE
    ========================================================= */
 
 .wedding-page {
@@ -19,14 +19,16 @@
   overflow: hidden;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.wedding-page * {
+  box-sizing: border-box;
 }
 
 /* =========================================================
-   STAGE
-
-   Card + text are one unit now.
+   INVITATION STAGE
    ========================================================= */
 
 .invitation-stage {
@@ -37,8 +39,7 @@
   align-items: center;
 
   /*
-   * Shift the whole object slightly left so the
-   * invitation has room to rotate clockwise.
+   * Leave room on the right for cards to swing.
    */
   transform: translateX(-6vw);
 }
@@ -51,20 +52,23 @@
   position: relative;
 
   /*
-   * Your PNGs are 1000 x 1000.
-   *
-   * Therefore the container MUST be square.
+   * Images are square.
    */
   width: min(68vw, 650px);
-
   aspect-ratio: 1 / 1;
+
+  flex: 0 0 auto;
 }
 
 /* =========================================================
-   INVITATION
+   CARDS
    ========================================================= */
 
 .invitation-card {
+  /*
+   * CRITICAL:
+   * all seven cards occupy EXACTLY the same position.
+   */
   position: absolute;
 
   top: 0;
@@ -73,13 +77,13 @@
   width: 100%;
   height: 100%;
 
-  /*
-   * No artificial white card behind the PNG anymore.
-   */
+  margin: 0;
+  padding: 0;
+
   background: transparent;
 
   /*
-   * Pin center = 28px / 28px.
+   * Physical pin/pivot.
    */
   transform-origin: 28px 28px;
 
@@ -89,35 +93,40 @@
 
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14), 0 18px 42px rgba(0, 0, 0, 0.13);
 
+  /*
+   * Required for finger dragging instead of
+   * browser scrolling.
+   */
   touch-action: none;
 
   user-select: none;
   -webkit-user-select: none;
 
+  /*
+   * This transition creates the snap.
+   */
   transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 250ms ease;
 
   will-change: transform;
 }
 
-/*
- * The PNG completely defines the physical card.
- *
- * No object-fit: contain → therefore NO white
- * letterboxing at the top and bottom.
- */
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
 .invitation-card img {
   display: block;
 
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
-
   margin: 0;
   padding: 0;
 
   border: 0;
+
+  object-fit: cover;
 
   pointer-events: none;
 
@@ -127,7 +136,7 @@
 }
 
 /* =========================================================
-   ACTIVE
+   ACTIVE CARD
    ========================================================= */
 
 .invitation-card-active {
@@ -139,15 +148,14 @@
 }
 
 /* =========================================================
-   DRAGGING
+   WHILE DRAGGING
    ========================================================= */
 
 .invitation-card-dragging {
   cursor: grabbing;
 
   /*
-   * While dragging there must be NO interpolation.
-   * The card stays directly under your gesture.
+   * While held, follow the pointer immediately.
    */
   transition: none;
 
@@ -155,11 +163,18 @@
 }
 
 /* =========================================================
-   OPEN CARD
+   OPEN / LOOPING CARDS
    ========================================================= */
 
 .invitation-card-open {
-  cursor: pointer;
+  cursor: default;
+}
+
+.invitation-card-looping {
+  /*
+   * Card 7 uses the same smooth snap animation.
+   */
+  pointer-events: none;
 }
 
 /* =========================================================
@@ -169,16 +184,13 @@
 .invitation-pin {
   position: absolute;
 
-  /*
-   * Center = 28px / 28px
-   */
   left: 17px;
   top: 17px;
 
   width: 22px;
   height: 22px;
 
-  z-index: 1000;
+  z-index: 2000;
 
   border-radius: 50%;
 
@@ -211,9 +223,7 @@
 }
 
 /* =========================================================
-   INFORMATION
-
-   Now directly beneath the physical invitation.
+   TEXT BELOW INVITATION
    ========================================================= */
 
 .invitation-info {
@@ -242,84 +252,368 @@
 
   color: #aaa197;
 }
-
 /* =========================================================
-   TABLET
+   BIG FINAL CELEBRATION
    ========================================================= */
 
-@media (max-width: 900px) {
-  .invitation-stage {
-    transform: translateX(-7vw);
+.celebration-layer {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 5000;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FIREWORKS
+   ========================================================= */
+
+.firework {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  --burst-distance: 135px;
+}
+
+/*
+ * Five explosions distributed around the screen.
+ */
+
+.firework-one {
+  left: 14%;
+  top: 24%;
+}
+
+.firework-two {
+  right: 14%;
+  top: 20%;
+}
+
+.firework-three {
+  left: 50%;
+  top: 11%;
+}
+
+.firework-four {
+  left: 27%;
+  top: 48%;
+}
+
+.firework-five {
+  right: 24%;
+  top: 48%;
+}
+
+/*
+ * Secondary explosion after the first group.
+ */
+
+.firework-center {
+  left: 53%;
+  top: 32%;
+
+  --burst-distance: 85px;
+}
+
+.firework-particle {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: var(--particle-size);
+  height: var(--particle-size);
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  animation: wedding-firework 1.65s cubic-bezier(0.12, 0.7, 0.2, 1) var(--delay)
+    forwards;
+}
+
+.firework-small {
+  animation-duration: 1.3s;
+}
+
+/* Gold */
+
+.firework-gold {
+  background: #e1b84f;
+
+  box-shadow: 0 0 4px #ffffff, 0 0 9px rgba(225, 184, 79, 0.95),
+    0 0 18px rgba(225, 184, 79, 0.55);
+}
+
+/* Blue */
+
+.firework-blue {
+  background: #a8cae1;
+
+  box-shadow: 0 0 4px #ffffff, 0 0 9px rgba(168, 202, 225, 0.95),
+    0 0 18px rgba(168, 202, 225, 0.55);
+}
+
+/* Rose */
+
+.firework-rose {
+  background: #efb8c0;
+
+  box-shadow: 0 0 4px #ffffff, 0 0 9px rgba(239, 184, 192, 0.95),
+    0 0 18px rgba(239, 184, 192, 0.55);
+}
+
+/* Cream */
+
+.firework-cream {
+  background: #f4dfba;
+
+  box-shadow: 0 0 4px #ffffff, 0 0 9px rgba(244, 223, 186, 0.95),
+    0 0 18px rgba(244, 223, 186, 0.6);
+}
+
+/* Bright white finale */
+
+.firework-white {
+  background: #ffffff;
+
+  box-shadow: 0 0 5px #ffffff, 0 0 12px rgba(255, 255, 255, 0.95),
+    0 0 20px rgba(255, 237, 190, 0.75);
+}
+
+@keyframes wedding-firework {
+  0% {
+    opacity: 0;
+
+    transform: rotate(var(--angle)) translateX(0) scale(0.25);
   }
 
-  .invitation-stack {
-    width: min(68vw, 570px);
+  8% {
+    opacity: 1;
+  }
+
+  22% {
+    opacity: 1;
+  }
+
+  72% {
+    opacity: 1;
+
+    transform: rotate(var(--angle)) translateX(var(--burst-distance))
+      scale(1.15);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: rotate(var(--angle))
+      translateX(calc(var(--burst-distance) * 1.25)) scale(0.15);
   }
 }
 
 /* =========================================================
-   PHONE
+   CONFETTI
+   ========================================================= */
+
+.confetti-container {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.celebration-confetti {
+  position: absolute;
+
+  left: var(--left);
+  top: -30px;
+
+  width: var(--confetti-width);
+  height: var(--confetti-height);
+
+  opacity: 0;
+
+  border-radius: 2px;
+
+  animation: wedding-confetti var(--duration) cubic-bezier(0.15, 0.45, 0.25, 1)
+    var(--delay) forwards;
+}
+
+/*
+ * More colors, but still matching the invitation.
+ */
+
+.confetti-color-0 {
+  background: #adc8dc;
+}
+
+.confetti-color-1 {
+  background: #e1b84f;
+}
+
+.confetti-color-2 {
+  background: #f5e5c9;
+}
+
+.confetti-color-3 {
+  background: #e9b8bf;
+}
+
+.confetti-color-4 {
+  background: #ffffff;
+}
+
+.confetti-color-5 {
+  background: #c6b5cf;
+}
+
+@keyframes wedding-confetti {
+  0% {
+    opacity: 0;
+
+    transform: translate3d(0, -30px, 0) rotate(0deg) scale(0.7);
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  15% {
+    transform: translate3d(calc(var(--drift) * -0.35), 15vh, 0) rotate(120deg)
+      scale(1);
+  }
+
+  45% {
+    transform: translate3d(var(--drift), 48vh, 0)
+      rotate(calc(var(--rotation) * 0.45));
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translate3d(calc(var(--drift) * -0.45), 110vh, 0)
+      rotate(var(--rotation));
+  }
+}
+
+/* =========================================================
+   LARGE SPARKS FROM SIDES
+   ========================================================= */
+
+.celebration-side-burst {
+  position: absolute;
+
+  font-size: 42px;
+
+  color: #e0b651;
+
+  opacity: 0;
+
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 16px rgba(224, 182, 81, 0.7);
+
+  animation: wedding-side-spark 1.8s ease-out 0.4s forwards;
+}
+
+.celebration-side-left {
+  left: 7%;
+  top: 56%;
+}
+
+.celebration-side-right {
+  right: 7%;
+  top: 57%;
+}
+
+@keyframes wedding-side-spark {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(0deg);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1.6) rotate(50deg);
+  }
+
+  65% {
+    opacity: 1;
+    transform: scale(1) rotate(100deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(160deg);
+  }
+}
+
+/* =========================================================
+   MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
-  .wedding-page {
-    align-items: center;
+  .firework {
+    --burst-distance: 82px;
   }
 
-  .invitation-stage {
-    /*
-     * Left positioning leaves room for the card
-     * to swing to the right.
-     */
-    transform: translateX(-8vw);
+  .firework-center {
+    --burst-distance: 58px;
   }
 
-  .invitation-stack {
-    width: 72vw;
+  .firework-one {
+    left: 9%;
+    top: 18%;
   }
 
-  .invitation-card {
-    transform-origin: 22px 22px;
+  .firework-two {
+    right: 9%;
+    top: 20%;
   }
 
-  .invitation-pin {
-    left: 13px;
-    top: 13px;
-
-    width: 18px;
-    height: 18px;
+  .firework-three {
+    left: 50%;
+    top: 8%;
   }
 
-  .invitation-pin-center {
-    left: 6px;
-    top: 6px;
-
-    width: 6px;
-    height: 6px;
+  .firework-four {
+    left: 16%;
+    top: 48%;
   }
 
-  .invitation-info {
-    /*
-     * Keep instruction close to card.
-     */
-    margin-top: 14px;
+  .firework-five {
+    right: 15%;
+    top: 47%;
   }
 
-  .invitation-help {
-    font-size: 13px;
+  .celebration-side-burst {
+    font-size: 30px;
   }
 }
 
 /* =========================================================
-   VERY SMALL PHONE
+   ACCESSIBILITY
    ========================================================= */
 
-@media (max-width: 380px) {
-  .invitation-stage {
-    transform: translateX(-9vw);
-  }
-
-  .invitation-stack {
-    width: 70vw;
+@media (prefers-reduced-motion: reduce) {
+  .firework-particle,
+  .celebration-confetti,
+  .celebration-side-burst {
+    display: none;
+    animation: none;
   }
 }
